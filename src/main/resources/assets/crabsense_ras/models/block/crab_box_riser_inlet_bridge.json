@@ -1,0 +1,217 @@
+{
+	"format_version": "26.3",
+	"ambientocclusion": false,
+	"textures": {
+		"pvc": "crabsense_ras:block/drum_pvc",
+		"particle": "crabsense_ras:block/drum_pvc"
+	},
+	"elements": [
+		{
+			"name": "port",
+			"from": [
+				13.43,
+				-2.26,
+				6.73
+			],
+			"to": [
+				14.57,
+				8.4,
+				7.87
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				}
+			}
+		},
+		{
+			"name": "port",
+			"from": [
+				7.15,
+				-2.26,
+				12.7
+			],
+			"to": [
+				8.05,
+				8.4,
+				13.6
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				}
+			}
+		},
+		{
+			"name": "port",
+			"from": [
+				1.95,
+				-2.26,
+				12.7
+			],
+			"to": [
+				2.85,
+				8.4,
+				13.6
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				}
+			}
+		}
+	]
+}

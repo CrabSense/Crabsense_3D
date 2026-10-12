@@ -5,7 +5,8 @@ import net.minecraft.util.StringRepresentable;
 public enum PipeBend implements StringRepresentable {
 	LEFT,
 	RIGHT,
-	UP;
+	UP,
+	DOWN;
 
 	@Override
 	public String getSerializedName() {

@@ -37,7 +37,7 @@ Cần Java 21, Fabric Loader ≥ 0.19.5, Minecraft `1.21.11`.
 | File | Dùng để |
 | --- | --- |
 | `RasMod.java` | Đăng ký mod, gọi `RasBlocks` / `RasBlockEntities` |
-| `block/RasBlocks.java` | Khai báo mọi block + item: tank, pump, rack, crab_box, drum_filter, pvc_tee, pvc_elbow, pvc_cap |
+| `block/RasBlocks.java` | Khai báo mọi block + item: tank, pump, rack, crab_box, drum_filter, pvc_tee, pvc_elbow, pvc_cap, pvc_pipe |
 | `block/CrabBoxBlock.java` | Hai hộp kề nhau thì ống xả đáy nối đáy, xả mặt nối mặt |
 | `block/DrumFilterBlock.java` + `DrumFilterBlockEntity.java` | Drum + tick phun rửa |
 | `block/PvcFittingBlock.java` | Tê / co 90 / nút bịt; tự lấy DN từ ống cạnh; click để xoay nhánh |
@@ -101,6 +101,7 @@ Cần Java 21, Fabric Loader ≥ 0.19.5, Minecraft `1.21.11`.
 | `pvc_tee` | Tê. Đặt sát ống thì tự DN. Click xoay nhánh |
 | `pvc_elbow` | Co 90°. Cùng cách DN + xoay |
 | `pvc_cap` | Nút bịt đầu ống |
+| `pvc_pipe` | Khúc ống thẳng. Cùng snap DN / độ cao |
 
 Cỡ ống (khớp CAD RAS): hộp mặt **27**, hộp đáy **34**, drum **60**.
 
@@ -120,7 +121,7 @@ Nguồn 3D để mở bằng Blockbench. Game **không** đọc `.bbmodel`.
 | `viewer/*.html` | Xem nhanh trên trình duyệt |
 | `assets/` | Bản export cũ, tham khảo |
 
-Sửa xong `.bbmodel` thì export Java Block JSON vào `src/main/resources/...` rồi build lại.
+Sửa xong `.bbmodel` thì export ra JSON (bước dưới) rồi build lại.
 
 ---
 
@@ -151,12 +152,41 @@ Build mới: `gradlew.bat build`, lấy jar trong `build/libs/`.
 
 ---
 
-## Luồng sửa model
+## Sinh file model JSON
 
-1. Mở `preview/*.bbmodel` trong Blockbench.
-2. Export / ghi JSON vào `src/main/resources/assets/crabsense_ras/models/block/`.
-3. `powershell -File tools/check_assets.ps1`
-4. `gradlew.bat build` rồi copy jar vào `mods/`.
-5. Thoát Minecraft hẳn rồi vào lại.
+Chạy từ thư mục `minesense-ras-mod`. Cần **Node.js**. File ra nằm ở `src/main/resources/assets/crabsense_ras/models/block/` (và `blockstates/` nếu script ghi luôn).
 
-Sửa logic ống / xoay phụ kiện thì sửa Java, không sửa JSON cho xong.
+### Ống hộp + T / L / bịt / khúc thẳng (script, không cần Blockbench)
+
+```bat
+node tools\gen_crab_pipe_models.mjs
+node tools\gen_pvc_fittings.mjs
+```
+
+- `gen_crab_pipe_models.mjs` → `crab_box_pipe_*.json` (manifold DN27 / DN34 dưới hộp)
+- `gen_pvc_fittings.mjs` → `pvc_tee_*.json`, `pvc_elbow_*.json`, `pvc_cap_*.json`, `pvc_pipe_*.json` + `blockstates/pvc_*.json`
+
+Sửa kích thước DN / toạ độ ống thì sửa script rồi chạy lại, đừng sửa từng JSON tay.
+
+### Khối từ Blockbench (hộp, drum, bể, bơm, kệ)
+
+1. Mở `preview/<tên>.bbmodel` trong Blockbench (plugin MCP nếu dùng `tools/bb_mcp.mjs`).
+2. File → Export → **Java Block/Item** ra một file tạm, ví dụ `preview/export_drum.json`.
+3. Đưa vào convention của mod:
+
+```bat
+node tools\bb_export_to_mod.mjs preview\export_drum.json drum_filter
+```
+
+Đối số 2 là tên block: `drum_filter`, `crab_box`, `tank`, `pump`, `rack`. Script ghi `models/block/<tên>.json` và trỏ texture sang `crabsense_ras:block/...`.
+
+### Kiểm tra rồi vào game
+
+```bat
+powershell -File tools\check_assets.ps1
+gradlew.bat build
+```
+
+Copy `build\libs\crabsense-ras-1.0.0.jar` vào `.minecraft\mods` (hoặc `release-mods\`). Thoát Minecraft hẳn rồi vào lại.
+
+Sửa logic nối ống / xoay phụ kiện thì sửa Java, không sửa JSON cho xong.

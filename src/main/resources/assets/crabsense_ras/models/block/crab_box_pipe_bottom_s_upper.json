@@ -1,0 +1,79 @@
+{
+	"format_version": "26.3",
+	"ambientocclusion": false,
+	"textures": {
+		"pvc": "crabsense_ras:block/drum_pvc",
+		"particle": "crabsense_ras:block/drum_pvc"
+	},
+	"elements": [
+		{
+			"name": "arm",
+			"from": [
+				13.43,
+				5.62,
+				7.1
+			],
+			"to": [
+				14.57,
+				6.76,
+				16.2
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				}
+			}
+		}
+	]
+}

@@ -47,8 +47,10 @@ public final class RasBlocks {
 		p -> new PvcFittingBlock(PvcFittingBlock.Kind.ELBOW, p));
 	public static final Block PVC_CAP = register("pvc_cap", pvcProps(),
 		p -> new PvcFittingBlock(PvcFittingBlock.Kind.CAP, p));
+	public static final Block PVC_PIPE = register("pvc_pipe", pvcProps(),
+		p -> new PvcFittingBlock(PvcFittingBlock.Kind.PIPE, p));
 
-	public static final List<Block> ALL = List.of(TANK, PUMP, RACK, CRAB_BOX, DRUM_FILTER, PVC_TEE, PVC_ELBOW, PVC_CAP);
+	public static final List<Block> ALL = List.of(TANK, PUMP, RACK, CRAB_BOX, DRUM_FILTER, PVC_TEE, PVC_ELBOW, PVC_CAP, PVC_PIPE);
 
 	public static void register() {
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> ALL.forEach(entries::accept));

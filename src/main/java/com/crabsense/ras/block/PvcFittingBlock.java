@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -26,15 +25,16 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /**
- * T / L / cap. Snaps onto crab-box drains; right-click turns the branch.
+ * T / L / cap. Snaps onto crab-box drains or the previous fitting; right-click turns the branch.
  */
 public class PvcFittingBlock extends Block {
 	public static final EnumProperty<PipeSize> DN = EnumProperty.create("dn", PipeSize.class);
 	public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<PipeBend> BEND = EnumProperty.create("bend", PipeBend.class);
-	public static final BooleanProperty ON_BOX = BooleanProperty.create("on_box");
+	public static final EnumProperty<PipeMount> MOUNT = EnumProperty.create("mount", PipeMount.class);
+	public static final EnumProperty<PipePort> PORT = EnumProperty.create("port", PipePort.class);
 
-	public enum Kind { TEE, ELBOW, CAP }
+	public enum Kind { TEE, ELBOW, CAP, PIPE }
 
 	private final Kind kind;
 
@@ -45,7 +45,8 @@ public class PvcFittingBlock extends Block {
 			.setValue(DN, PipeSize.DN34)
 			.setValue(FACING, Direction.NORTH)
 			.setValue(BEND, PipeBend.LEFT)
-			.setValue(ON_BOX, false));
+			.setValue(MOUNT, PipeMount.AIR)
+			.setValue(PORT, PipePort.SIDES));
 	}
 
 	public Kind kind() {
@@ -54,23 +55,24 @@ public class PvcFittingBlock extends Block {
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(DN, FACING, BEND, ON_BOX);
+		builder.add(DN, FACING, BEND, MOUNT, PORT);
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockPos pos = context.getClickedPos();
-		Direction toBox = boxNeighbor(context.getLevel(), pos);
-		boolean onBox = toBox != null;
-		Direction facing = onBox ? toBox : context.getHorizontalDirection();
-		if (!onBox) {
+		Direction prefer = context.getClickedFace().getOpposite();
+		Direction toward = towardPipe(context.getLevel(), pos, prefer);
+		PipeMount mount = mountAt(context.getLevel(), pos, toward);
+		Direction facing = toward != null ? toward : context.getHorizontalDirection();
+		if (toward == null) {
 			Direction clicked = context.getClickedFace();
 			if (clicked.getAxis().isHorizontal()) {
 				facing = kind == Kind.CAP ? clicked.getOpposite() : clicked;
 			}
 		}
 		return defaultBlockState()
-			.setValue(ON_BOX, onBox)
+			.setValue(MOUNT, mount)
 			.setValue(FACING, facing)
 			.setValue(BEND, PipeBend.LEFT)
 			.setValue(DN, PipeSizes.fromNeighbors(context.getLevel(), pos, context.getClickLocation()));
@@ -79,10 +81,11 @@ public class PvcFittingBlock extends Block {
 	@Override
 	protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks,
 			BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
-		Direction toBox = boxNeighbor(level, pos);
-		BlockState next = state.setValue(ON_BOX, toBox != null);
-		if (toBox != null) {
-			next = next.setValue(FACING, toBox);
+		Direction toward = towardPipe(level, pos, state.getValue(FACING));
+		PipeMount mount = mountAt(level, pos, toward);
+		BlockState next = state.setValue(MOUNT, mount);
+		if (mount != PipeMount.AIR && toward != null) {
+			next = next.setValue(FACING, toward);
 		}
 		PipeSize dn = PipeSizes.of(neighborState, neighborPos, Vec3.atCenterOf(neighborPos), direction.getOpposite());
 		if (dn != null) {
@@ -109,27 +112,88 @@ public class PvcFittingBlock extends Block {
 	}
 
 	BlockState turn(BlockState state) {
-		if (kind == Kind.CAP && !state.getValue(ON_BOX)) {
+		if (kind == Kind.CAP || kind == Kind.PIPE) {
 			return state.setValue(FACING, state.getValue(FACING).getClockWise());
 		}
-		if (state.getValue(ON_BOX) || kind != Kind.CAP) {
-			return state.setValue(BEND, state.getValue(BEND).next());
+		PipeBend next = state.getValue(BEND).next();
+		BlockState out = state.setValue(BEND, next);
+		if (next != PipeBend.LEFT) {
+			return out;
 		}
-		return state.setValue(FACING, state.getValue(FACING).getClockWise());
+		if (kind == Kind.TEE) {
+			PipePort port = state.getValue(PORT).other();
+			out = out.setValue(PORT, port);
+			if (port == PipePort.SIDES && state.getValue(MOUNT) == PipeMount.AIR) {
+				out = out.setValue(FACING, state.getValue(FACING).getClockWise());
+			}
+			return out;
+		}
+		if (state.getValue(MOUNT) == PipeMount.AIR) {
+			out = out.setValue(FACING, state.getValue(FACING).getClockWise());
+		}
+		return out;
 	}
 
-	static Direction boxNeighbor(LevelReader level, BlockPos pos) {
+	static Direction towardPipe(LevelReader level, BlockPos pos, Direction prefer) {
+		if (isBox(level.getBlockState(pos.relative(prefer)))) {
+			return prefer;
+		}
+		Direction box = neighborKind(level, pos, PvcFittingBlock::isBox);
+		if (box != null) {
+			return box;
+		}
+		if (isFitting(level.getBlockState(pos.relative(prefer)))) {
+			return prefer;
+		}
+		Direction fit = neighborKind(level, pos, PvcFittingBlock::isFitting);
+		if (fit != null) {
+			return fit;
+		}
+		if (isDrum(level.getBlockState(pos.relative(prefer)))) {
+			return prefer;
+		}
+		return neighborKind(level, pos, PvcFittingBlock::isDrum);
+	}
+
+	static PipeMount mountAt(LevelReader level, BlockPos pos, Direction toward) {
+		if (toward == null) {
+			return PipeMount.AIR;
+		}
+		BlockState n = level.getBlockState(pos.relative(toward));
+		if (isBox(n)) {
+			return PipeMount.BOX;
+		}
+		if (isFitting(n)) {
+			PipeMount theirs = n.getValue(MOUNT);
+			return theirs == PipeMount.AIR ? PipeMount.AIR : PipeMount.LINE;
+		}
+		return PipeMount.AIR;
+	}
+
+	static Direction neighborKind(LevelReader level, BlockPos pos, java.util.function.Predicate<BlockState> test) {
 		for (Direction dir : Direction.Plane.HORIZONTAL) {
-			if (level.getBlockState(pos.relative(dir)).getBlock() == RasBlocks.CRAB_BOX) {
+			if (test.test(level.getBlockState(pos.relative(dir)))) {
 				return dir;
 			}
 		}
 		return null;
 	}
 
+	static boolean isBox(BlockState state) {
+		return state.getBlock() == RasBlocks.CRAB_BOX;
+	}
+
+	static boolean isFitting(BlockState state) {
+		return state.getBlock() instanceof PvcFittingBlock;
+	}
+
+	static boolean isDrum(BlockState state) {
+		return state.getBlock() == RasBlocks.DRUM_FILTER;
+	}
+
 	@Override
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		if (state.getValue(ON_BOX)) {
+		if (state.getValue(MOUNT) != PipeMount.AIR) {
 			return Shapes.box(0.05, 0.0, 0.05, 0.95, 0.35, 0.95);
 		}
 		float u = state.getValue(DN).units();

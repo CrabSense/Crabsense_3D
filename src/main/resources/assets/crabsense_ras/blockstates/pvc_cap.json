@@ -1,266 +1,1026 @@
 {
 	"variants": {
-		"dn=27,facing=north,bend=left,on_box=false": {
+		"dn=27,facing=north,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 180
 		},
-		"dn=27,facing=north,bend=right,on_box=false": {
+		"dn=27,facing=north,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 180
 		},
-		"dn=27,facing=north,bend=up,on_box=false": {
+		"dn=27,facing=north,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 0
+		},
+		"dn=27,facing=north,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 0
+		},
+		"dn=27,facing=north,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 180
 		},
-		"dn=27,facing=south,bend=left,on_box=false": {
+		"dn=27,facing=north,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 180
+		},
+		"dn=27,facing=north,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 180
+		},
+		"dn=27,facing=north,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 180
+		},
+		"dn=27,facing=south,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 0
 		},
-		"dn=27,facing=south,bend=right,on_box=false": {
+		"dn=27,facing=south,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 0
 		},
-		"dn=27,facing=south,bend=up,on_box=false": {
+		"dn=27,facing=south,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 180
+		},
+		"dn=27,facing=south,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 180
+		},
+		"dn=27,facing=south,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 0
 		},
-		"dn=27,facing=east,bend=left,on_box=false": {
+		"dn=27,facing=south,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 0
+		},
+		"dn=27,facing=south,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 0
+		},
+		"dn=27,facing=south,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 0
+		},
+		"dn=27,facing=east,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 270
 		},
-		"dn=27,facing=east,bend=right,on_box=false": {
+		"dn=27,facing=east,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 270
 		},
-		"dn=27,facing=east,bend=up,on_box=false": {
+		"dn=27,facing=east,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 90
+		},
+		"dn=27,facing=east,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 90
+		},
+		"dn=27,facing=east,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 270
 		},
-		"dn=27,facing=west,bend=left,on_box=false": {
+		"dn=27,facing=east,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 270
+		},
+		"dn=27,facing=east,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 270
+		},
+		"dn=27,facing=east,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 270
+		},
+		"dn=27,facing=west,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 90
 		},
-		"dn=27,facing=west,bend=right,on_box=false": {
+		"dn=27,facing=west,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 90
 		},
-		"dn=27,facing=west,bend=up,on_box=false": {
+		"dn=27,facing=west,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 270
+		},
+		"dn=27,facing=west,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 270
+		},
+		"dn=27,facing=west,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27",
 			"y": 90
 		},
-		"dn=27,facing=north,bend=left,on_box=true": {
+		"dn=27,facing=west,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 90
+		},
+		"dn=27,facing=west,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 90
+		},
+		"dn=27,facing=west,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27",
+			"y": 90
+		},
+		"dn=27,facing=north,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_left"
 		},
-		"dn=27,facing=north,bend=right,on_box=true": {
+		"dn=27,facing=north,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_left_stem"
+		},
+		"dn=27,facing=north,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_left"
+		},
+		"dn=27,facing=north,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_left_stem"
+		},
+		"dn=27,facing=north,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_right"
 		},
-		"dn=27,facing=north,bend=up,on_box=true": {
+		"dn=27,facing=north,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_right_stem"
+		},
+		"dn=27,facing=north,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_right"
+		},
+		"dn=27,facing=north,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_right_stem"
+		},
+		"dn=27,facing=north,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_up"
 		},
-		"dn=27,facing=south,bend=left,on_box=true": {
+		"dn=27,facing=north,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_up_stem"
+		},
+		"dn=27,facing=north,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_up"
+		},
+		"dn=27,facing=north,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_up_stem"
+		},
+		"dn=27,facing=north,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_down"
+		},
+		"dn=27,facing=north,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_north_down_stem"
+		},
+		"dn=27,facing=north,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_down"
+		},
+		"dn=27,facing=north,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_north_down_stem"
+		},
+		"dn=27,facing=south,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_left"
 		},
-		"dn=27,facing=south,bend=right,on_box=true": {
+		"dn=27,facing=south,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_left_stem"
+		},
+		"dn=27,facing=south,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_left"
+		},
+		"dn=27,facing=south,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_left_stem"
+		},
+		"dn=27,facing=south,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_right"
 		},
-		"dn=27,facing=south,bend=up,on_box=true": {
+		"dn=27,facing=south,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_right_stem"
+		},
+		"dn=27,facing=south,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_right"
+		},
+		"dn=27,facing=south,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_right_stem"
+		},
+		"dn=27,facing=south,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_up"
 		},
-		"dn=27,facing=east,bend=left,on_box=true": {
+		"dn=27,facing=south,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_up_stem"
+		},
+		"dn=27,facing=south,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_up"
+		},
+		"dn=27,facing=south,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_up_stem"
+		},
+		"dn=27,facing=south,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_down"
+		},
+		"dn=27,facing=south,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_south_down_stem"
+		},
+		"dn=27,facing=south,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_down"
+		},
+		"dn=27,facing=south,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_south_down_stem"
+		},
+		"dn=27,facing=east,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_left"
 		},
-		"dn=27,facing=east,bend=right,on_box=true": {
+		"dn=27,facing=east,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_left_stem"
+		},
+		"dn=27,facing=east,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_left"
+		},
+		"dn=27,facing=east,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_left_stem"
+		},
+		"dn=27,facing=east,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_right"
 		},
-		"dn=27,facing=east,bend=up,on_box=true": {
+		"dn=27,facing=east,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_right_stem"
+		},
+		"dn=27,facing=east,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_right"
+		},
+		"dn=27,facing=east,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_right_stem"
+		},
+		"dn=27,facing=east,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_up"
 		},
-		"dn=27,facing=west,bend=left,on_box=true": {
+		"dn=27,facing=east,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_up_stem"
+		},
+		"dn=27,facing=east,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_up"
+		},
+		"dn=27,facing=east,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_up_stem"
+		},
+		"dn=27,facing=east,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_down"
+		},
+		"dn=27,facing=east,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_east_down_stem"
+		},
+		"dn=27,facing=east,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_down"
+		},
+		"dn=27,facing=east,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_east_down_stem"
+		},
+		"dn=27,facing=west,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_left"
 		},
-		"dn=27,facing=west,bend=right,on_box=true": {
+		"dn=27,facing=west,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_left_stem"
+		},
+		"dn=27,facing=west,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_left"
+		},
+		"dn=27,facing=west,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_left_stem"
+		},
+		"dn=27,facing=west,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_right"
 		},
-		"dn=27,facing=west,bend=up,on_box=true": {
+		"dn=27,facing=west,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_right_stem"
+		},
+		"dn=27,facing=west,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_right"
+		},
+		"dn=27,facing=west,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_right_stem"
+		},
+		"dn=27,facing=west,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_up"
 		},
-		"dn=34,facing=north,bend=left,on_box=false": {
+		"dn=27,facing=west,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_up_stem"
+		},
+		"dn=27,facing=west,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_up"
+		},
+		"dn=27,facing=west,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_up_stem"
+		},
+		"dn=27,facing=west,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_down"
+		},
+		"dn=27,facing=west,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_box_west_down_stem"
+		},
+		"dn=27,facing=west,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_down"
+		},
+		"dn=27,facing=west,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn27_line_west_down_stem"
+		},
+		"dn=34,facing=north,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 180
 		},
-		"dn=34,facing=north,bend=right,on_box=false": {
+		"dn=34,facing=north,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 180
 		},
-		"dn=34,facing=north,bend=up,on_box=false": {
+		"dn=34,facing=north,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 0
+		},
+		"dn=34,facing=north,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 0
+		},
+		"dn=34,facing=north,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 180
 		},
-		"dn=34,facing=south,bend=left,on_box=false": {
+		"dn=34,facing=north,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 180
+		},
+		"dn=34,facing=north,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 180
+		},
+		"dn=34,facing=north,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 180
+		},
+		"dn=34,facing=south,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 0
 		},
-		"dn=34,facing=south,bend=right,on_box=false": {
+		"dn=34,facing=south,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 0
 		},
-		"dn=34,facing=south,bend=up,on_box=false": {
+		"dn=34,facing=south,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 180
+		},
+		"dn=34,facing=south,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 180
+		},
+		"dn=34,facing=south,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 0
 		},
-		"dn=34,facing=east,bend=left,on_box=false": {
+		"dn=34,facing=south,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 0
+		},
+		"dn=34,facing=south,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 0
+		},
+		"dn=34,facing=south,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 0
+		},
+		"dn=34,facing=east,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 270
 		},
-		"dn=34,facing=east,bend=right,on_box=false": {
+		"dn=34,facing=east,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 270
 		},
-		"dn=34,facing=east,bend=up,on_box=false": {
+		"dn=34,facing=east,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 90
+		},
+		"dn=34,facing=east,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 90
+		},
+		"dn=34,facing=east,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 270
 		},
-		"dn=34,facing=west,bend=left,on_box=false": {
+		"dn=34,facing=east,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 270
+		},
+		"dn=34,facing=east,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 270
+		},
+		"dn=34,facing=east,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 270
+		},
+		"dn=34,facing=west,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 90
 		},
-		"dn=34,facing=west,bend=right,on_box=false": {
+		"dn=34,facing=west,bend=left,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 90
 		},
-		"dn=34,facing=west,bend=up,on_box=false": {
+		"dn=34,facing=west,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 270
+		},
+		"dn=34,facing=west,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 270
+		},
+		"dn=34,facing=west,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34",
 			"y": 90
 		},
-		"dn=34,facing=north,bend=left,on_box=true": {
+		"dn=34,facing=west,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 90
+		},
+		"dn=34,facing=west,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 90
+		},
+		"dn=34,facing=west,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34",
+			"y": 90
+		},
+		"dn=34,facing=north,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_left"
 		},
-		"dn=34,facing=north,bend=right,on_box=true": {
+		"dn=34,facing=north,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_left_stem"
+		},
+		"dn=34,facing=north,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_left"
+		},
+		"dn=34,facing=north,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_left_stem"
+		},
+		"dn=34,facing=north,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_right"
 		},
-		"dn=34,facing=north,bend=up,on_box=true": {
+		"dn=34,facing=north,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_right_stem"
+		},
+		"dn=34,facing=north,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_right"
+		},
+		"dn=34,facing=north,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_right_stem"
+		},
+		"dn=34,facing=north,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_up"
 		},
-		"dn=34,facing=south,bend=left,on_box=true": {
+		"dn=34,facing=north,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_up_stem"
+		},
+		"dn=34,facing=north,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_up"
+		},
+		"dn=34,facing=north,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_up_stem"
+		},
+		"dn=34,facing=north,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_down"
+		},
+		"dn=34,facing=north,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_north_down_stem"
+		},
+		"dn=34,facing=north,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_down"
+		},
+		"dn=34,facing=north,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_north_down_stem"
+		},
+		"dn=34,facing=south,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_left"
 		},
-		"dn=34,facing=south,bend=right,on_box=true": {
+		"dn=34,facing=south,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_left_stem"
+		},
+		"dn=34,facing=south,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_left"
+		},
+		"dn=34,facing=south,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_left_stem"
+		},
+		"dn=34,facing=south,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_right"
 		},
-		"dn=34,facing=south,bend=up,on_box=true": {
+		"dn=34,facing=south,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_right_stem"
+		},
+		"dn=34,facing=south,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_right"
+		},
+		"dn=34,facing=south,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_right_stem"
+		},
+		"dn=34,facing=south,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_up"
 		},
-		"dn=34,facing=east,bend=left,on_box=true": {
+		"dn=34,facing=south,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_up_stem"
+		},
+		"dn=34,facing=south,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_up"
+		},
+		"dn=34,facing=south,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_up_stem"
+		},
+		"dn=34,facing=south,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_down"
+		},
+		"dn=34,facing=south,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_south_down_stem"
+		},
+		"dn=34,facing=south,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_down"
+		},
+		"dn=34,facing=south,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_south_down_stem"
+		},
+		"dn=34,facing=east,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_left"
 		},
-		"dn=34,facing=east,bend=right,on_box=true": {
+		"dn=34,facing=east,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_left_stem"
+		},
+		"dn=34,facing=east,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_left"
+		},
+		"dn=34,facing=east,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_left_stem"
+		},
+		"dn=34,facing=east,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_right"
 		},
-		"dn=34,facing=east,bend=up,on_box=true": {
+		"dn=34,facing=east,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_right_stem"
+		},
+		"dn=34,facing=east,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_right"
+		},
+		"dn=34,facing=east,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_right_stem"
+		},
+		"dn=34,facing=east,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_up"
 		},
-		"dn=34,facing=west,bend=left,on_box=true": {
+		"dn=34,facing=east,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_up_stem"
+		},
+		"dn=34,facing=east,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_up"
+		},
+		"dn=34,facing=east,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_up_stem"
+		},
+		"dn=34,facing=east,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_down"
+		},
+		"dn=34,facing=east,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_east_down_stem"
+		},
+		"dn=34,facing=east,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_down"
+		},
+		"dn=34,facing=east,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_east_down_stem"
+		},
+		"dn=34,facing=west,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_left"
 		},
-		"dn=34,facing=west,bend=right,on_box=true": {
+		"dn=34,facing=west,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_left_stem"
+		},
+		"dn=34,facing=west,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_left"
+		},
+		"dn=34,facing=west,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_left_stem"
+		},
+		"dn=34,facing=west,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_right"
 		},
-		"dn=34,facing=west,bend=up,on_box=true": {
+		"dn=34,facing=west,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_right_stem"
+		},
+		"dn=34,facing=west,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_right"
+		},
+		"dn=34,facing=west,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_right_stem"
+		},
+		"dn=34,facing=west,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_up"
 		},
-		"dn=60,facing=north,bend=left,on_box=false": {
+		"dn=34,facing=west,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_up_stem"
+		},
+		"dn=34,facing=west,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_up"
+		},
+		"dn=34,facing=west,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_up_stem"
+		},
+		"dn=34,facing=west,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_down"
+		},
+		"dn=34,facing=west,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_box_west_down_stem"
+		},
+		"dn=34,facing=west,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_down"
+		},
+		"dn=34,facing=west,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn34_line_west_down_stem"
+		},
+		"dn=60,facing=north,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 180
 		},
-		"dn=60,facing=north,bend=right,on_box=false": {
+		"dn=60,facing=north,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 180
 		},
-		"dn=60,facing=north,bend=up,on_box=false": {
+		"dn=60,facing=north,bend=left,mount=line,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 180
 		},
-		"dn=60,facing=south,bend=left,on_box=false": {
+		"dn=60,facing=north,bend=left,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=right,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 0
 		},
-		"dn=60,facing=south,bend=right,on_box=false": {
+		"dn=60,facing=north,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 0
 		},
-		"dn=60,facing=south,bend=up,on_box=false": {
+		"dn=60,facing=north,bend=right,mount=line,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 0
 		},
-		"dn=60,facing=east,bend=left,on_box=false": {
+		"dn=60,facing=north,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=north,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=north,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=north,bend=up,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=up,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=left,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=left,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=left,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=right,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=up,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=up,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 0
+		},
+		"dn=60,facing=east,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 270
 		},
-		"dn=60,facing=east,bend=right,on_box=false": {
+		"dn=60,facing=east,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 270
 		},
-		"dn=60,facing=east,bend=up,on_box=false": {
+		"dn=60,facing=east,bend=left,mount=line,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 270
 		},
-		"dn=60,facing=west,bend=left,on_box=false": {
+		"dn=60,facing=east,bend=left,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=right,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 90
 		},
-		"dn=60,facing=west,bend=right,on_box=false": {
+		"dn=60,facing=east,bend=right,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 90
 		},
-		"dn=60,facing=west,bend=up,on_box=false": {
+		"dn=60,facing=east,bend=right,mount=line,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 90
 		},
-		"dn=60,facing=north,bend=left,on_box=true": {
+		"dn=60,facing=east,bend=right,mount=air,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
-			"y": 180
+			"y": 90
 		},
-		"dn=60,facing=north,bend=right,on_box=true": {
+		"dn=60,facing=east,bend=right,mount=box,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
-			"y": 180
+			"y": 90
 		},
-		"dn=60,facing=north,bend=up,on_box=true": {
+		"dn=60,facing=east,bend=right,mount=line,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
-			"y": 180
+			"y": 90
 		},
-		"dn=60,facing=south,bend=left,on_box=true": {
-			"model": "crabsense_ras:block/pvc_cap_dn60",
-			"y": 0
-		},
-		"dn=60,facing=south,bend=right,on_box=true": {
-			"model": "crabsense_ras:block/pvc_cap_dn60",
-			"y": 0
-		},
-		"dn=60,facing=south,bend=up,on_box=true": {
-			"model": "crabsense_ras:block/pvc_cap_dn60",
-			"y": 0
-		},
-		"dn=60,facing=east,bend=left,on_box=true": {
+		"dn=60,facing=east,bend=up,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 270
 		},
-		"dn=60,facing=east,bend=right,on_box=true": {
+		"dn=60,facing=east,bend=up,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 270
 		},
-		"dn=60,facing=east,bend=up,on_box=true": {
+		"dn=60,facing=east,bend=up,mount=line,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 270
 		},
-		"dn=60,facing=west,bend=left,on_box=true": {
+		"dn=60,facing=east,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=down,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=left,mount=air,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 90
 		},
-		"dn=60,facing=west,bend=right,on_box=true": {
+		"dn=60,facing=west,bend=left,mount=box,port=sides": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 90
 		},
-		"dn=60,facing=west,bend=up,on_box=true": {
+		"dn=60,facing=west,bend=left,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=left,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=left,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=left,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=right,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=right,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=right,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=right,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=right,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=right,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=up,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=up,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=up,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=up,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=up,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=up,mount=line,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=down,mount=air,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=down,mount=box,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=down,mount=line,port=sides": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=down,mount=air,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=down,mount=box,port=stem": {
+			"model": "crabsense_ras:block/pvc_cap_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=down,mount=line,port=stem": {
 			"model": "crabsense_ras:block/pvc_cap_dn60",
 			"y": 90
 		}

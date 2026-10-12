@@ -12,7 +12,9 @@
 	"block.crabsense_ras.pvc_tee": "PVC Tee",
 	"block.crabsense_ras.pvc_elbow": "PVC Elbow",
 	"block.crabsense_ras.pvc_cap": "PVC Cap",
+	"block.crabsense_ras.pvc_pipe": "PVC Pipe",
 	"item.crabsense_ras.pvc_tee": "PVC Tee",
 	"item.crabsense_ras.pvc_elbow": "PVC Elbow",
-	"item.crabsense_ras.pvc_cap": "PVC Cap"
+	"item.crabsense_ras.pvc_cap": "PVC Cap",
+	"item.crabsense_ras.pvc_pipe": "PVC Pipe"
 }

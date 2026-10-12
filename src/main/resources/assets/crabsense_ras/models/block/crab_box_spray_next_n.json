@@ -1,0 +1,79 @@
+{
+	"format_version": "26.3",
+	"ambientocclusion": false,
+	"textures": {
+		"pvc": "crabsense_ras:block/drum_pvc",
+		"particle": "crabsense_ras:block/drum_pvc"
+	},
+	"elements": [
+		{
+			"name": "spray_next",
+			"from": [
+				1.95,
+				14.9,
+				-0.8
+			],
+			"to": [
+				2.85,
+				23.8,
+				0.1
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				}
+			}
+		}
+	]
+}

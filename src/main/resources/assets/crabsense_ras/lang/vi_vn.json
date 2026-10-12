@@ -12,7 +12,9 @@
 	"block.crabsense_ras.pvc_tee": "Tê PVC",
 	"block.crabsense_ras.pvc_elbow": "Co 90 PVC",
 	"block.crabsense_ras.pvc_cap": "Nút bịt PVC",
+	"block.crabsense_ras.pvc_pipe": "Ống PVC",
 	"item.crabsense_ras.pvc_tee": "Tê PVC",
 	"item.crabsense_ras.pvc_elbow": "Co 90 PVC",
-	"item.crabsense_ras.pvc_cap": "Nút bịt PVC"
+	"item.crabsense_ras.pvc_cap": "Nút bịt PVC",
+	"item.crabsense_ras.pvc_pipe": "Ống PVC"
 }

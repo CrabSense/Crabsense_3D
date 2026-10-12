@@ -3,6 +3,35 @@
 		{
 			"apply": {
 				"model": "crabsense_ras:block/crab_box"
+			},
+			"when": {
+				"open_low": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_open_low"
+			},
+			"when": {
+				"open_low": "true"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_upper"
+			},
+			"when": {
+				"layers": "2",
+				"open_high": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_open_high_upper"
+			},
+			"when": {
+				"layers": "2",
+				"open_high": "true"
 			}
 		},
 		{
@@ -12,7 +41,23 @@
 		},
 		{
 			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_drops_upper"
+			},
+			"when": {
+				"layers": "2"
+			}
+		},
+		{
+			"apply": {
 				"model": "crabsense_ras:block/crab_box_pipe_bottom_n"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_n_upper"
+			},
+			"when": {
+				"layers": "2"
 			}
 		},
 		{
@@ -22,12 +67,49 @@
 		},
 		{
 			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_s_upper"
+			},
+			"when": {
+				"layers": "2"
+			}
+		},
+		{
+			"apply": {
 				"model": "crabsense_ras:block/crab_box_pipe_surface_n"
 			}
 		},
 		{
 			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_n_upper"
+			},
+			"when": {
+				"layers": "2"
+			}
+		},
+		{
+			"apply": {
 				"model": "crabsense_ras:block/crab_box_pipe_surface_s"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_s_upper"
+			},
+			"when": {
+				"layers": "2"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_pipe"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_pipe_upper"
+			},
+			"when": {
+				"layers": "2"
 			}
 		},
 		{
@@ -40,10 +122,28 @@
 		},
 		{
 			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_e_upper"
+			},
+			"when": {
+				"east": "true",
+				"layers": "2"
+			}
+		},
+		{
+			"apply": {
 				"model": "crabsense_ras:block/crab_box_pipe_surface_e"
 			},
 			"when": {
 				"east": "true"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_e_upper"
+			},
+			"when": {
+				"east": "true",
+				"layers": "2"
 			}
 		},
 		{
@@ -56,10 +156,142 @@
 		},
 		{
 			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_w_upper"
+			},
+			"when": {
+				"west": "true",
+				"layers": "2"
+			}
+		},
+		{
+			"apply": {
 				"model": "crabsense_ras:block/crab_box_pipe_surface_w"
 			},
 			"when": {
 				"west": "true"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_w_upper"
+			},
+			"when": {
+				"west": "true",
+				"layers": "2"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_lid"
+			},
+			"when": {
+				"layers": "1",
+				"up": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_lid_upper"
+			},
+			"when": {
+				"layers": "2",
+				"up": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_riser_tiers_n"
+			},
+			"when": {
+				"layers": "2",
+				"up": "true",
+				"north": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_riser_tiers_s"
+			},
+			"when": {
+				"layers": "2",
+				"up": "true",
+				"south": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_riser_tiers_top_n"
+			},
+			"when": {
+				"layers": "2",
+				"up": "false",
+				"north": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_riser_tiers_top_s"
+			},
+			"when": {
+				"layers": "2",
+				"up": "false",
+				"south": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_link_n"
+			},
+			"when": {
+				"layers": "2",
+				"north": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_link_s"
+			},
+			"when": {
+				"layers": "2",
+				"south": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_next_n"
+			},
+			"when": {
+				"layers": "2",
+				"up": "true",
+				"north": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_next_s"
+			},
+			"when": {
+				"layers": "2",
+				"up": "true",
+				"south": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_down_n"
+			},
+			"when": {
+				"join": "2",
+				"north": "false"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_spray_down_s"
+			},
+			"when": {
+				"join": "2",
+				"south": "false"
 			}
 		}
 	]
