@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>CrabSense RAS — xem model 3D</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; padding: 32px; background: #0d1117; color: #e6edf3;
+         font: 15px/1.5 "Segoe UI", system-ui, sans-serif; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  p.sub { color: #8b949e; margin: 0 0 24px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  a.card { display: block; text-decoration: none; color: inherit; background: #161b22;
+           border: 1px solid #30363d; border-radius: 10px; overflow: hidden; transition: border-color .15s; }
+  a.card:hover { border-color: #6DC22E; }
+  a.card img { display: block; width: 100%; background: #0d1117; }
+  .name { padding: 10px 12px; font-weight: 600; }
+  .id { color: #8b949e; font-weight: 400; font-size: 13px; }
+  footer { margin-top: 28px; color: #8b949e; font-size: 13px; }
+  code { background: #161b22; border: 1px solid #30363d; border-radius: 4px; padding: 1px 5px; }
+</style>
+</head>
+<body>
+  <h1>CrabSense RAS — model 3D</h1>
+  <p class="sub">Bấm một khối để mở trong Blockbench Web (xoay / zoom / xem texture trực tiếp). Không cần cài gì.</p>
+  <div class="grid" id="grid"></div>
+  <footer>
+    Tạo tự động bởi <code>tools\preview.ps1</code> (headless Blockbench MCP).
+    Ảnh thu nhỏ là render 6 góc lưu ở <code>preview\renders\</code>.
+  </footer>
+<script>
+  const blocks = [
+    { id: 'tank',        label: 'Bể nuôi RAS' },
+    { id: 'pump',        label: 'Máy bơm tuần hoàn' },
+    { id: 'rack',        label: 'Kệ hộp nuôi' },
+    { id: 'crab_box',    label: 'Hộp nuôi cua' },
+    { id: 'drum_filter', label: 'Trống lọc' },
+  ];
+  document.getElementById('grid').innerHTML = blocks.map(b => `
+    <a class="card" href="${b.id}.html">
+      <img src="../renders/${b.id}-three-quarter.png" alt="${b.label}" loading="lazy">
+      <div class="name">${b.label} <div class="id">crabsense_ras:${b.id}</div></div>
+    </a>`).join('');
+</script>
+</body>
+</html>

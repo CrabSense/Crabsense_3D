@@ -1,0 +1,268 @@
+{
+	"variants": {
+		"dn=27,facing=north,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 180
+		},
+		"dn=27,facing=north,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 180
+		},
+		"dn=27,facing=north,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 180
+		},
+		"dn=27,facing=south,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 0
+		},
+		"dn=27,facing=south,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 0
+		},
+		"dn=27,facing=south,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 0
+		},
+		"dn=27,facing=east,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 270
+		},
+		"dn=27,facing=east,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 270
+		},
+		"dn=27,facing=east,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 270
+		},
+		"dn=27,facing=west,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 90
+		},
+		"dn=27,facing=west,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 90
+		},
+		"dn=27,facing=west,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn27",
+			"y": 90
+		},
+		"dn=27,facing=north,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_north_left"
+		},
+		"dn=27,facing=north,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_north_right"
+		},
+		"dn=27,facing=north,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_north_up"
+		},
+		"dn=27,facing=south,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_south_left"
+		},
+		"dn=27,facing=south,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_south_right"
+		},
+		"dn=27,facing=south,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_south_up"
+		},
+		"dn=27,facing=east,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_east_left"
+		},
+		"dn=27,facing=east,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_east_right"
+		},
+		"dn=27,facing=east,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_east_up"
+		},
+		"dn=27,facing=west,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_west_left"
+		},
+		"dn=27,facing=west,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_west_right"
+		},
+		"dn=27,facing=west,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn27_box_west_up"
+		},
+		"dn=34,facing=north,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 180
+		},
+		"dn=34,facing=north,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 180
+		},
+		"dn=34,facing=north,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 180
+		},
+		"dn=34,facing=south,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 0
+		},
+		"dn=34,facing=south,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 0
+		},
+		"dn=34,facing=south,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 0
+		},
+		"dn=34,facing=east,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 270
+		},
+		"dn=34,facing=east,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 270
+		},
+		"dn=34,facing=east,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 270
+		},
+		"dn=34,facing=west,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 90
+		},
+		"dn=34,facing=west,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 90
+		},
+		"dn=34,facing=west,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn34",
+			"y": 90
+		},
+		"dn=34,facing=north,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_north_left"
+		},
+		"dn=34,facing=north,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_north_right"
+		},
+		"dn=34,facing=north,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_north_up"
+		},
+		"dn=34,facing=south,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_south_left"
+		},
+		"dn=34,facing=south,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_south_right"
+		},
+		"dn=34,facing=south,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_south_up"
+		},
+		"dn=34,facing=east,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_east_left"
+		},
+		"dn=34,facing=east,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_east_right"
+		},
+		"dn=34,facing=east,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_east_up"
+		},
+		"dn=34,facing=west,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_west_left"
+		},
+		"dn=34,facing=west,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_west_right"
+		},
+		"dn=34,facing=west,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn34_box_west_up"
+		},
+		"dn=60,facing=north,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 0
+		},
+		"dn=60,facing=east,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=left,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=right,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=up,on_box=false": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 90
+		},
+		"dn=60,facing=north,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 180
+		},
+		"dn=60,facing=north,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 180
+		},
+		"dn=60,facing=south,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 0
+		},
+		"dn=60,facing=south,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 0
+		},
+		"dn=60,facing=east,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 270
+		},
+		"dn=60,facing=east,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 270
+		},
+		"dn=60,facing=west,bend=left,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=right,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 90
+		},
+		"dn=60,facing=west,bend=up,on_box=true": {
+			"model": "crabsense_ras:block/pvc_tee_dn60",
+			"y": 90
+		}
+	}
+}

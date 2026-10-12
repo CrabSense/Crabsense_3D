@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "crabsense_ras",
+	"version": "${version}",
+	"name": "CrabSense RAS",
+	"description": "Các khối hệ thống RAS (bể nuôi, máy bơm, kệ hộp nuôi, hộp cua) để lắp ráp và quan sát vận hành.",
+	"authors": [
+		"CrabSense"
+	],
+	"license": "MIT",
+	"icon": "assets/crabsense_ras/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.crabsense.ras.RasMod"
+		],
+		"client": [
+			"com.crabsense.ras.client.RasModClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

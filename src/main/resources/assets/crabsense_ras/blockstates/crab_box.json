@@ -1,0 +1,66 @@
+{
+	"multipart": [
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_drops"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_n"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_s"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_n"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_s"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_e"
+			},
+			"when": {
+				"east": "true"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_e"
+			},
+			"when": {
+				"east": "true"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_bottom_w"
+			},
+			"when": {
+				"west": "true"
+			}
+		},
+		{
+			"apply": {
+				"model": "crabsense_ras:block/crab_box_pipe_surface_w"
+			},
+			"when": {
+				"west": "true"
+			}
+		}
+	]
+}

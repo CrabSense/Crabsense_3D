@@ -1,0 +1,16 @@
+{"elements":[
+{"name":"door_lower_v_1","from":[0.55,1.45,2.1],"to":[1.1,3.0,2.32],"shade":true},
+{"name":"door_lower_v_2","from":[0.55,1.45,3.0],"to":[1.1,3.0,3.22],"shade":true},
+{"name":"door_lower_v_3","from":[0.55,1.45,3.9],"to":[1.1,3.0,4.12],"shade":true},
+{"name":"door_lower_v_4","from":[0.55,1.45,4.8],"to":[1.1,3.0,5.02],"shade":true},
+{"name":"door_lower_v_5","from":[0.55,1.45,5.7],"to":[1.1,3.0,5.92],"shade":true},
+{"name":"door_lower_v_6","from":[0.55,1.45,6.6],"to":[1.1,3.0,6.82],"shade":true},
+{"name":"door_lower_v_7","from":[0.55,1.45,7.5],"to":[1.1,3.0,7.72],"shade":true},
+{"name":"door_lower_v_8","from":[0.55,1.45,8.4],"to":[1.1,3.0,8.62],"shade":true},
+{"name":"door_lower_v_9","from":[0.55,1.45,9.3],"to":[1.1,3.0,9.52],"shade":true},
+{"name":"door_lower_v_10","from":[0.55,1.45,10.2],"to":[1.1,3.0,10.42],"shade":true},
+{"name":"door_lower_v_11","from":[0.55,1.45,11.1],"to":[1.1,3.0,11.32],"shade":true},
+{"name":"door_lower_v_12","from":[0.55,1.45,12.0],"to":[1.1,3.0,12.22],"shade":true},
+{"name":"door_lower_v_13","from":[0.55,1.45,12.7],"to":[1.1,3.0,12.92],"shade":true},
+{"name":"door_lower_rail","from":[0.55,2.65,2.1],"to":[1.1,2.9,12.9],"shade":true}
+],"group":"7f8d2614-a7d1-6e2a-69ec-5f40f92f943c","faces":true}

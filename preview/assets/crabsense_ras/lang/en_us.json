@@ -1,0 +1,12 @@
+{
+	"block.crabsense_ras.tank": "RAS Culture Tank",
+	"block.crabsense_ras.pump": "RAS Circulation Pump",
+	"block.crabsense_ras.rack": "RAS Rearing Rack",
+	"block.crabsense_ras.crab_box": "RAS Crab Box",
+	"block.crabsense_ras.drum_filter": "RAS Drum Filter",
+	"item.crabsense_ras.tank": "RAS Culture Tank",
+	"item.crabsense_ras.pump": "RAS Circulation Pump",
+	"item.crabsense_ras.rack": "RAS Rearing Rack",
+	"item.crabsense_ras.crab_box": "RAS Crab Box",
+	"item.crabsense_ras.drum_filter": "RAS Drum Filter"
+}

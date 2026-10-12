@@ -1,0 +1,1 @@
+{"code":"\nconst names = (typeof ModelProject !== 'undefined' ? ModelProject.all : []).map(p => p.name);\nconst crab = (ModelProject.all || []).find(p => p.save_path && p.save_path.includes('crab_box_fixed'));\nif (crab) crab.select();\n({names, active: Project.name, save: Project.save_path, cubes: Cube.all.length});\n"}

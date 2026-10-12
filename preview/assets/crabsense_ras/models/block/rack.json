@@ -1,0 +1,73 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "crabsense_ras:block/rack",
+		"all": "crabsense_ras:block/rack"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [1, 16, 1],
+			"faces": {
+				"down": { "texture": "#all" }, "up": { "texture": "#all" },
+				"north": { "texture": "#all" }, "south": { "texture": "#all" },
+				"west": { "texture": "#all" }, "east": { "texture": "#all" }
+			}
+		},
+		{
+			"from": [15, 0, 0],
+			"to": [16, 16, 1],
+			"faces": {
+				"down": { "texture": "#all" }, "up": { "texture": "#all" },
+				"north": { "texture": "#all" }, "south": { "texture": "#all" },
+				"west": { "texture": "#all" }, "east": { "texture": "#all" }
+			}
+		},
+		{
+			"from": [0, 0, 15],
+			"to": [1, 16, 16],
+			"faces": {
+				"down": { "texture": "#all" }, "up": { "texture": "#all" },
+				"north": { "texture": "#all" }, "south": { "texture": "#all" },
+				"west": { "texture": "#all" }, "east": { "texture": "#all" }
+			}
+		},
+		{
+			"from": [15, 0, 15],
+			"to": [16, 16, 16],
+			"faces": {
+				"down": { "texture": "#all" }, "up": { "texture": "#all" },
+				"north": { "texture": "#all" }, "south": { "texture": "#all" },
+				"west": { "texture": "#all" }, "east": { "texture": "#all" }
+			}
+		},
+		{
+			"from": [1, 1, 1],
+			"to": [15, 2, 15],
+			"faces": {
+				"down": { "texture": "#all" }, "up": { "texture": "#all" },
+				"north": { "texture": "#all" }, "south": { "texture": "#all" },
+				"west": { "texture": "#all" }, "east": { "texture": "#all" }
+			}
+		},
+		{
+			"from": [1, 7, 1],
+			"to": [15, 8, 15],
+			"faces": {
+				"down": { "texture": "#all" }, "up": { "texture": "#all" },
+				"north": { "texture": "#all" }, "south": { "texture": "#all" },
+				"west": { "texture": "#all" }, "east": { "texture": "#all" }
+			}
+		},
+		{
+			"from": [1, 13, 1],
+			"to": [15, 14, 15],
+			"faces": {
+				"down": { "texture": "#all" }, "up": { "texture": "#all" },
+				"north": { "texture": "#all" }, "south": { "texture": "#all" },
+				"west": { "texture": "#all" }, "east": { "texture": "#all" }
+			}
+		}
+	]
+}
