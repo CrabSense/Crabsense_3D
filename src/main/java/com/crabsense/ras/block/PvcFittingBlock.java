@@ -80,7 +80,8 @@ public class PvcFittingBlock extends Block {
 		Direction toward = towardPipe(context.getLevel(), pos, prefer);
 		PipeMount mount = mountAt(context.getLevel(), pos, toward, null);
 		double ly = (context.getClickLocation().y - pos.getY()) * 16.0;
-		if (toward != null) {
+		boolean verticalClick = context.getClickedFace().getAxis().isVertical();
+		if (toward != null && toward.getAxis().isHorizontal()) {
 			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
 			if (n.getBlock() == RasBlocks.DRUM_FILTER && toward == Direction.SOUTH && ly >= 6.0) {
 				mount = PipeMount.DRUM_HIGH;
@@ -92,6 +93,8 @@ public class PvcFittingBlock extends Block {
 					mount = theirs;
 				}
 			}
+		} else if (verticalClick) {
+			mount = PipeMount.AIR;
 		}
 		Direction facing = toward != null && toward.getAxis().isHorizontal()
 			? toward
@@ -103,7 +106,7 @@ public class PvcFittingBlock extends Block {
 			}
 		}
 		PipeBend bend = PipeBend.LEFT;
-		if (toward != null) {
+		if (toward != null && toward.getAxis().isHorizontal()) {
 			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
 			if (n.getBlock() instanceof PvcFittingBlock) {
 				PipeMount theirs = n.getValue(MOUNT);
@@ -133,7 +136,7 @@ public class PvcFittingBlock extends Block {
 			}
 		}
 		BlockState here = context.getLevel().getBlockState(pos);
-		if (here.getBlock() instanceof PvcFittingBlock existing) {
+		if (!verticalClick && here.getBlock() instanceof PvcFittingBlock) {
 			PipeMount was = here.getValue(MOUNT);
 			if (was == PipeMount.DRUM && ly >= 6.0) {
 				return addHighLane(here, context.getHorizontalDirection(), PipeBend.LEFT, kind);
@@ -189,6 +192,9 @@ public class PvcFittingBlock extends Block {
 		if (was != PipeMount.DRUM && was != PipeMount.DRUM_HIGH) {
 			return false;
 		}
+		if (context.getClickedFace().getAxis().isVertical()) {
+			return false;
+		}
 		double ly = (context.getClickLocation().y - context.getClickedPos().getY()) * 16.0;
 		return was == PipeMount.DRUM ? ly >= 6.0 : ly < 6.0;
 	}
@@ -202,10 +208,11 @@ public class PvcFittingBlock extends Block {
 		if (stack.getItem() instanceof BlockItem item && item.getBlock() instanceof PvcFittingBlock held) {
 			PipeMount was = state.getValue(MOUNT);
 			double ly = (hit.getLocation().y - pos.getY()) * 16.0;
+			boolean sideClick = hit.getDirection().getAxis().isHorizontal();
 			BlockState merged = null;
-			if (was == PipeMount.DRUM && ly >= 6.0) {
+			if (sideClick && was == PipeMount.DRUM && ly >= 6.0) {
 				merged = addHighLane(state, player.getDirection(), PipeBend.LEFT, held.kind());
-			} else if (was == PipeMount.DRUM_HIGH && ly < 6.0) {
+			} else if (sideClick && was == PipeMount.DRUM_HIGH && ly < 6.0) {
 				merged = addLowLane(state, held, player.getDirection(), PipeBend.LEFT);
 			}
 			if (merged != null) {
@@ -318,6 +325,9 @@ public class PvcFittingBlock extends Block {
 
 	static PipeMount mountAt(LevelReader level, BlockPos pos, Direction toward, PipeMount current) {
 		if (toward == null) {
+			return PipeMount.AIR;
+		}
+		if (toward.getAxis().isVertical()) {
 			return PipeMount.AIR;
 		}
 		BlockState n = level.getBlockState(pos.relative(toward));
