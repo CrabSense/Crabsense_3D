@@ -43,7 +43,7 @@ const xRun = (name, cx, cz, dn, x0, x1) => {
 	return cube(name, [x0, a, round(cz - h)], [x1, b, round(cz + h)]);
 };
 
-const BX = 14.0, BZ = 7.3, SX = 7.6, SZ = 13.15;
+const BX = 14.0, BZ = 8.0, SX = 8.0, SZ = 13.15;
 const B = 34, S = 27;
 const bh = od(B) / 2, sh = od(S) / 2;
 // Three front slots are evenly spaced: spray, surface drain, bottom drain.

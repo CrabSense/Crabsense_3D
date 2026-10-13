@@ -49,16 +49,19 @@ public final class PipeSizes {
 		return null;
 	}
 
-	/** Surface drain DN27 sits nearer south; bottom drain DN34 sits nearer east. */
+	/** DN34 = clean-water out on east (x=14,z=8); DN27 = inlet on south (x=8,z=13.15). */
 	static PipeSize crabBoxDrain(BlockPos box, Vec3 click, Direction onFace) {
 		double lx = (click.x - box.getX()) * 16;
 		double lz = (click.z - box.getZ()) * 16;
-		double d34 = onFace.getAxis() == Direction.Axis.Z
-			? Math.abs(lx - BOX_BOTTOM_X)
-			: Math.abs(lz - BOX_BOTTOM_Z);
-		double d27 = onFace.getAxis() == Direction.Axis.Z
-			? Math.abs(lx - BOX_SURFACE_X)
-			: Math.abs(lz - BOX_SURFACE_Z);
+		double d34;
+		double d27;
+		if (onFace.getAxis() == Direction.Axis.Z) {
+			d34 = Math.abs(lx - BOX_BOTTOM_X);
+			d27 = Math.abs(lx - BOX_SURFACE_X);
+		} else {
+			d34 = Math.abs(lz - BOX_BOTTOM_Z);
+			d27 = Math.abs(lz - BOX_SURFACE_Z);
+		}
 		if (onFace.getAxis() == Direction.Axis.Y) {
 			d34 = hypot(lx - BOX_BOTTOM_X, lz - BOX_BOTTOM_Z);
 			d27 = hypot(lx - BOX_SURFACE_X, lz - BOX_SURFACE_Z);
