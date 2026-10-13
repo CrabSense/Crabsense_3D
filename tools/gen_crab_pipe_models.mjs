@@ -43,11 +43,11 @@ const xRun = (name, cx, cz, dn, x0, x1) => {
 	return cube(name, [x0, a, round(cz - h)], [x1, b, round(cz + h)]);
 };
 
-const BX = 14.0, BZ = 8.0, SX = 8.0, SZ = 13.15;
+const BX = 8.0, BZ = 13.15, SX = 8.0, SZ = 13.15;
 const B = 34, S = 27;
 const bh = od(B) / 2, sh = od(S) / 2;
-// Three front slots are evenly spaced: spray, surface drain, bottom drain.
-const sprayX = 2.4;
+// Inlet spray + clean-out + sludge share the centered south/north column (x=8).
+const sprayX = 8.0;
 const sprayY = 7.35;
 
 const stem = (x, z, h) => cube("stem", [round(x - h), round(yc), round(z - h)], [round(x + h), -1.05, round(z + h)]);
@@ -163,11 +163,21 @@ write("crab_box_riser_bottom_up", bottomUp);
 const lines = [];
 const box = JSON.parse(fs.readFileSync(`${dir}/crab_box.json`, "utf8"));
 for (const e of box.elements) {
-	if (e.name === "north_notch_door" || e.name === "south_notch_door") {
-		e.to[1] = 6.55;
+	// Close the old left (inlet) and right (clean-out) wall holes; keep the centered sludge slot.
+	if (e.name === "north_notch_door" || e.name === "south_notch_door"
+		|| e.name === "north_notch_bottom" || e.name === "south_notch_bottom") {
+		e.to[1] = 8;
 	}
-	if (/^(north|south)_notch_(surface|bottom)$/.test(e.name)) {
+	if (/^(north|south)_notch_surface$/.test(e.name)) {
 		e.to[1] = 5.35;
+	}
+	if (e.name && e.name.startsWith("bottom_drain")) {
+		const dx = 8 - (e.from[0] + e.to[0]) / 2;
+		const dz = 13.15 - (e.from[2] + e.to[2]) / 2;
+		e.from[0] += dx;
+		e.to[0] += dx;
+		e.from[2] += dz;
+		e.to[2] += dz;
 	}
 }
 fs.writeFileSync(`${dir}/crab_box.json`, JSON.stringify(box, null, "\t") + "\n");

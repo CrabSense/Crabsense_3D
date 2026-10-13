@@ -33,7 +33,7 @@ import java.util.Map;
  * caps on the two ends.
  */
 public class CrabBoxBlock extends Block {
-	private static final double SPRAY_X = 2.4 / 16.0;
+	private static final double SPRAY_X = 8.0 / 16.0;
 	private static final double SPRAY_Y = 7.1 / 16.0;
 	private static final double SPRAY_Z = 8.0 / 16.0;
 	public static final BooleanProperty NORTH = BlockStateProperties.NORTH;

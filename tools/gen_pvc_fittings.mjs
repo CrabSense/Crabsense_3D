@@ -182,8 +182,8 @@ function freeTeeStemDownDrum(dn) {
 
 function lowParts(kind, dn, facing, bend, mount, port = "sides") {
 	const ns = facing === "north" || facing === "south";
-	const cx = ns ? (dn === 34 ? 14 : 8) : 8;
-	const cz = ns ? 8 : (dn === 34 ? 8 : 13.15);
+	const cx = 8;
+	const cz = ns ? 8 : 13.15;
 	const h = od(dn) / 2;
 	const y0 = -2.26;
 	const y1 = -1.36;

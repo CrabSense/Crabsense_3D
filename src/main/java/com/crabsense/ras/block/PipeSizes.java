@@ -12,11 +12,6 @@ public final class PipeSizes {
 	private PipeSizes() {
 	}
 
-	static final double BOX_BOTTOM_X = 14.0;
-	static final double BOX_BOTTOM_Z = 8.0;
-	static final double BOX_SURFACE_X = 8.0;
-	static final double BOX_SURFACE_Z = 13.15;
-
 	public static PipeSize fromNeighbors(LevelReader level, BlockPos place, Vec3 click) {
 		PipeSize found = null;
 		for (Direction dir : Direction.values()) {
@@ -49,27 +44,12 @@ public final class PipeSizes {
 		return null;
 	}
 
-	/** DN34 = clean-water out on east (x=14,z=8); DN27 = inlet on south (x=8,z=13.15). */
+	/** Both ports sit at x=8 on the south face; high click = inlet DN27, low = clean-out DN34. */
 	static PipeSize crabBoxDrain(BlockPos box, Vec3 click, Direction onFace) {
-		double lx = (click.x - box.getX()) * 16;
-		double lz = (click.z - box.getZ()) * 16;
-		double d34;
-		double d27;
-		if (onFace.getAxis() == Direction.Axis.Z) {
-			d34 = Math.abs(lx - BOX_BOTTOM_X);
-			d27 = Math.abs(lx - BOX_SURFACE_X);
-		} else {
-			d34 = Math.abs(lz - BOX_BOTTOM_Z);
-			d27 = Math.abs(lz - BOX_SURFACE_Z);
-		}
+		double y = (click.y - box.getY()) * 16;
 		if (onFace.getAxis() == Direction.Axis.Y) {
-			d34 = hypot(lx - BOX_BOTTOM_X, lz - BOX_BOTTOM_Z);
-			d27 = hypot(lx - BOX_SURFACE_X, lz - BOX_SURFACE_Z);
+			return PipeSize.DN34;
 		}
-		return d34 <= d27 ? PipeSize.DN34 : PipeSize.DN27;
-	}
-
-	private static double hypot(double x, double z) {
-		return Math.sqrt(x * x + z * z);
+		return y >= 4.0 ? PipeSize.DN27 : PipeSize.DN34;
 	}
 }
