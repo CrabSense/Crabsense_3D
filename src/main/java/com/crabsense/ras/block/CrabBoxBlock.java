@@ -7,6 +7,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
@@ -121,6 +122,9 @@ public class CrabBoxBlock extends Block {
 				}
 			}
 			return InteractionResult.SUCCESS;
+		}
+		if (stack.getItem() instanceof BlockItem item && item.getBlock() instanceof PvcFittingBlock) {
+			return InteractionResult.PASS;
 		}
 		return toggleDoor(state, level, pos, hit);
 	}

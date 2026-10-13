@@ -206,8 +206,13 @@ public class PvcFittingBlock extends Block {
 	}
 
 	static Direction towardPipe(LevelReader level, BlockPos pos, Direction prefer) {
-		if (prefer.getAxis().isHorizontal() && attachable(level.getBlockState(pos.relative(prefer)), prefer)) {
+		if (attachable(level.getBlockState(pos.relative(prefer)), prefer)) {
 			return prefer;
+		}
+		for (Direction dir : new Direction[] { Direction.DOWN, Direction.UP }) {
+			if (isFitting(level.getBlockState(pos.relative(dir))) || isOutletDrum(level.getBlockState(pos.relative(dir)))) {
+				return dir;
+			}
 		}
 		Direction fit = neighborKind(level, pos, PvcFittingBlock::isFitting);
 		if (fit != null) {
@@ -298,8 +303,35 @@ public class PvcFittingBlock extends Block {
 		if (mount != PipeMount.AIR) {
 			return Shapes.box(0.05, 0.0, 0.05, 0.95, 0.35, 0.95);
 		}
-		float u = state.getValue(DN).units();
-		double r = Math.max(4, u * 2.4) / 16.0;
-		return Shapes.box(0.5 - r, 0.5 - r, 0.5 - r, 0.5 + r, 0.5 + r, 0.5 + r);
+		double r = switch (state.getValue(DN)) {
+			case DN60 -> 3.2 / 32.0;
+			case DN34 -> 1.2 / 32.0;
+			case DN27 -> 0.9 / 32.0;
+		};
+		r = Math.max(0.08, r + 0.04);
+		PipeBend bend = state.getValue(BEND);
+		if (bend == PipeBend.UP || bend == PipeBend.DOWN) {
+			VoxelShape column = tube(Direction.UP, r);
+			if (kind == Kind.PIPE) {
+				return column;
+			}
+			return Shapes.or(column, tube(state.getValue(FACING), r));
+		}
+		VoxelShape run = tube(state.getValue(FACING), r);
+		if (kind == Kind.PIPE || kind == Kind.CAP) {
+			return run;
+		}
+		Direction branch = bend == PipeBend.RIGHT
+			? state.getValue(FACING).getClockWise()
+			: state.getValue(FACING).getCounterClockWise();
+		return Shapes.or(run, tube(branch, r));
+	}
+
+	static VoxelShape tube(Direction axis, double r) {
+		return switch (axis) {
+			case UP, DOWN -> Shapes.box(0.5 - r, 0, 0.5 - r, 0.5 + r, 1, 0.5 + r);
+			case EAST, WEST -> Shapes.box(0, 0.5 - r, 0.5 - r, 1, 0.5 + r, 0.5 + r);
+			default -> Shapes.box(0.5 - r, 0.5 - r, 0, 0.5 + r, 0.5 + r, 1);
+		};
 	}
 }
