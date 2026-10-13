@@ -7,7 +7,9 @@ public enum PipeMount implements StringRepresentable {
 	AIR,
 	BOX,
 	LINE,
-	DRUM;
+	DRUM,
+	DRUM_HIGH,
+	DRUM_BOTH;
 
 	@Override
 	public String getSerializedName() {

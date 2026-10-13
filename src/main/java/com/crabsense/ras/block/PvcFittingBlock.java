@@ -63,7 +63,15 @@ public class PvcFittingBlock extends Block {
 		BlockPos pos = context.getClickedPos();
 		Direction prefer = context.getClickedFace().getOpposite();
 		Direction toward = towardPipe(context.getLevel(), pos, prefer);
-		PipeMount mount = mountAt(context.getLevel(), pos, toward);
+		PipeMount mount = mountAt(context.getLevel(), pos, toward, null);
+		if (mount == PipeMount.DRUM && toward != null) {
+			BlockPos drum = pos.relative(toward);
+			double ly = (context.getClickLocation().y - drum.getY()) * 16.0;
+			// North face of the filter has waste (y≈9.4) stacked over inlet (y≈2.8).
+			if (toward == Direction.SOUTH && ly >= 6.0) {
+				mount = PipeMount.DRUM_HIGH;
+			}
+		}
 		Direction facing = toward != null && toward.getAxis().isHorizontal()
 			? toward
 			: context.getHorizontalDirection();
@@ -94,7 +102,7 @@ public class PvcFittingBlock extends Block {
 	protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks,
 			BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
 		Direction toward = towardPipe(level, pos, state.getValue(FACING));
-		PipeMount mount = mountAt(level, pos, toward);
+		PipeMount mount = mountAt(level, pos, toward, state.getValue(MOUNT));
 		BlockState next = state.setValue(MOUNT, mount);
 		PipeSize dn = PipeSizes.of(neighborState, neighborPos, Vec3.atCenterOf(neighborPos), direction.getOpposite());
 		if (dn != null) {
@@ -175,7 +183,7 @@ public class PvcFittingBlock extends Block {
 		return isFitting(n) || isBox(n) || isOutletToward(n, fromHereToThem) || isDrum(n);
 	}
 
-	static PipeMount mountAt(LevelReader level, BlockPos pos, Direction toward) {
+	static PipeMount mountAt(LevelReader level, BlockPos pos, Direction toward, PipeMount current) {
 		if (toward == null) {
 			return PipeMount.AIR;
 		}
@@ -187,12 +195,15 @@ public class PvcFittingBlock extends Block {
 			return PipeMount.DRUM;
 		}
 		if (n.getBlock() == RasBlocks.DRUM_FILTER) {
+			if (current == PipeMount.DRUM_HIGH || current == PipeMount.DRUM_BOTH) {
+				return current;
+			}
 			return PipeMount.DRUM;
 		}
 		if (isFitting(n)) {
 			return switch (n.getValue(MOUNT)) {
 				case AIR -> PipeMount.AIR;
-				case DRUM -> PipeMount.DRUM;
+				case DRUM, DRUM_HIGH, DRUM_BOTH -> PipeMount.DRUM;
 				case BOX, LINE -> PipeMount.LINE;
 			};
 		}
@@ -231,7 +242,14 @@ public class PvcFittingBlock extends Block {
 
 	@Override
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		if (state.getValue(MOUNT) != PipeMount.AIR) {
+		PipeMount mount = state.getValue(MOUNT);
+		if (mount == PipeMount.DRUM_HIGH) {
+			return Shapes.box(0.05, 0.40, 0.05, 0.95, 0.75, 0.95);
+		}
+		if (mount == PipeMount.DRUM_BOTH) {
+			return Shapes.box(0.05, 0.0, 0.05, 0.95, 0.75, 0.95);
+		}
+		if (mount != PipeMount.AIR) {
 			return Shapes.box(0.05, 0.0, 0.05, 0.95, 0.35, 0.95);
 		}
 		float u = state.getValue(DN).units();

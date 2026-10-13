@@ -1,0 +1,140 @@
+{
+	"format_version": "26.3",
+	"ambientocclusion": false,
+	"gui_light": "front",
+	"display": {
+		"gui": {
+			"rotation": [
+				30,
+				225,
+				0
+			],
+			"translation": [
+				0,
+				0,
+				0
+			],
+			"scale": [
+				1.15,
+				1.15,
+				1.15
+			]
+		},
+		"ground": {
+			"translation": [
+				0,
+				2,
+				0
+			],
+			"scale": [
+				0.7,
+				0.7,
+				0.7
+			]
+		},
+		"firstperson_righthand": {
+			"rotation": [
+				0,
+				45,
+				0
+			],
+			"scale": [
+				0.7,
+				0.7,
+				0.7
+			]
+		},
+		"thirdperson_righthand": {
+			"rotation": [
+				75,
+				45,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.55,
+				0.55,
+				0.55
+			]
+		}
+	},
+	"textures": {
+		"pvc": "crabsense_ras:block/drum_pvc",
+		"particle": "crabsense_ras:block/drum_pvc"
+	},
+	"elements": [
+		{
+			"name": "run",
+			"from": [
+				7,
+				8.4,
+				0
+			],
+			"to": [
+				9,
+				10.4,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#pvc"
+				}
+			}
+		}
+	]
+}
