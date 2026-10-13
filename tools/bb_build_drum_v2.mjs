@@ -211,8 +211,8 @@ const FLANGE_T = 0.4;
 // lower pipe nearer the centre = clean outlet.
 const PORTS = {
 	plate_upper: { axis: "z", dir: -1, stub: { from: [7.0, 8.4, -1.6], to: [9.0, 10.4, 1.0] }, flange: { from: [6.4, 7.8, -0.4], to: [9.6, 11.0, 0.0] } },
-	plate_lower: { axis: "z", dir: -1, stub: { from: [2.2, 1.8, -1.6], to: [4.2, 3.8, 1.0] }, flange: { from: [1.6, 1.2, -0.4], to: [4.8, 4.4, 0.0] } },
-	front_low: { axis: "z", dir: 1, stub: { from: [11.8, 1.8, 15.0], to: [13.8, 3.8, 17.6] }, flange: { from: [11.2, 1.2, 16.0], to: [14.4, 4.4, 16.4] } },
+	plate_lower: { axis: "z", dir: -1, stub: { from: [7.0, 1.8, -1.6], to: [9.0, 3.8, 1.0] }, flange: { from: [6.4, 1.2, -0.4], to: [9.6, 4.4, 0.0] } },
+	front_low: { axis: "z", dir: 1, stub: { from: [7.0, 1.8, 15.0], to: [9.0, 3.8, 17.6] }, flange: { from: [6.4, 1.2, 16.0], to: [9.6, 4.4, 16.4] } },
 };
 
 // A, J: the tank shell. The inlet baffle is split in two so the drive shaft can
@@ -301,17 +301,17 @@ const PARTS = [
 	{ group: "I_Waste_Drain", texture: "pvc", elements: spigot("plate_upper", PORTS.plate_upper.axis, PORTS.plate_upper.dir, PORTS.plate_upper.stub, PORTS.plate_upper.flange) },
 	{ group: "F_Water_Inlet", texture: "pvc", elements: [
 		...spigot("plate_lower", PORTS.plate_lower.axis, PORTS.plate_lower.dir, PORTS.plate_lower.stub, PORTS.plate_lower.flange),
-		box("inlet_into_drum", [2.4, 2.2, 1.0], [6.6, 3.2, 4.2]),
+		box("inlet_into_drum", [7.0, 2.2, 1.0], [9.0, 3.2, 4.2]),
 	] },
 	{ group: "G_Clean_Water_Outlet", texture: "pvc", elements: [
 		...spigot("front_low", PORTS.front_low.axis, PORTS.front_low.dir, PORTS.front_low.stub, PORTS.front_low.flange),
-		box("outlet_duct", [11.9, 2.1, 4.6], [13.7, 3.5, 16.0]),
+		box("outlet_duct", [7.1, 2.1, 4.6], [8.9, 3.5, 16.0]),
 	] },
 	// Dark bores make all three PVC ports visibly open instead of capped.
 	{ group: "PORT_BORES", texture: "motor", elements: [
 		box("waste_bore", [7.45, 8.85, -1.62], [8.55, 9.95, -1.58]),
-		box("inlet_bore", [2.65, 2.35, -1.62], [3.75, 3.45, -1.58]),
-		box("outlet_bore", [12.25, 2.35, 17.58], [13.35, 3.45, 17.62]),
+		box("inlet_bore", [7.45, 2.35, -1.62], [8.55, 3.45, -1.58]),
+		box("outlet_bore", [7.45, 2.35, 17.58], [8.55, 3.45, 17.62]),
 	] },
 ];
 

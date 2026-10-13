@@ -67,7 +67,7 @@ public class DrumFilterBlockEntity extends BlockEntity {
 		server.sendParticles(DIRTY_WATER, pos.getX() + 8.0 / 16.0,
 			pos.getY() + 9.4 / 16.0, pos.getZ() - 0.15,
 			3, 0.05, 0.04, 0.02, 0.04);
-		server.sendParticles(CLEAN_WATER, pos.getX() + 12.8 / 16.0,
+		server.sendParticles(CLEAN_WATER, pos.getX() + 8.0 / 16.0,
 			pos.getY() + 2.8 / 16.0, pos.getZ() + 16.15 / 16.0,
 			3, 0.06, 0.04, 0.02, 0.04);
 	}
