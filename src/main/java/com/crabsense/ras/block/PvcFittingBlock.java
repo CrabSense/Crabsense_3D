@@ -125,44 +125,37 @@ public class PvcFittingBlock extends Block {
 		if (kind == Kind.TEE) {
 			PipePort port = state.getValue(PORT).other();
 			out = out.setValue(PORT, port);
-			if (port == PipePort.SIDES && state.getValue(MOUNT) == PipeMount.AIR) {
+			if (port == PipePort.SIDES) {
 				out = out.setValue(FACING, state.getValue(FACING).getClockWise());
 			}
 			return out;
 		}
-		if (state.getValue(MOUNT) == PipeMount.AIR) {
-			out = out.setValue(FACING, state.getValue(FACING).getClockWise());
-		}
+		out = out.setValue(FACING, state.getValue(FACING).getClockWise());
 		return out;
 	}
 
 	static Direction towardPipe(LevelReader level, BlockPos pos, Direction prefer) {
-		if (prefer.getAxis().isHorizontal() && isBox(level.getBlockState(pos.relative(prefer)))) {
-			return prefer;
-		}
-		Direction box = neighborKind(level, pos, PvcFittingBlock::isBox);
-		if (box != null) {
-			return box;
-		}
-		if (prefer.getAxis().isHorizontal() && isFitting(level.getBlockState(pos.relative(prefer)))) {
+		if (prefer.getAxis().isHorizontal() && attachable(level.getBlockState(pos.relative(prefer)), prefer)) {
 			return prefer;
 		}
 		Direction fit = neighborKind(level, pos, PvcFittingBlock::isFitting);
 		if (fit != null) {
 			return fit;
 		}
-		if (isOutletToward(level.getBlockState(pos.relative(prefer)), prefer)) {
-			return prefer;
-		}
 		for (Direction dir : Direction.Plane.HORIZONTAL) {
 			if (isOutletToward(level.getBlockState(pos.relative(dir)), dir)) {
 				return dir;
 			}
 		}
-		if (prefer.getAxis().isHorizontal() && isDrum(level.getBlockState(pos.relative(prefer)))) {
-			return prefer;
+		Direction box = neighborKind(level, pos, PvcFittingBlock::isBox);
+		if (box != null) {
+			return box;
 		}
 		return neighborKind(level, pos, PvcFittingBlock::isDrum);
+	}
+
+	static boolean attachable(BlockState n, Direction fromHereToThem) {
+		return isFitting(n) || isBox(n) || isOutletToward(n, fromHereToThem) || isDrum(n);
 	}
 
 	static PipeMount mountAt(LevelReader level, BlockPos pos, Direction toward) {
@@ -177,8 +170,11 @@ public class PvcFittingBlock extends Block {
 			return PipeMount.DRUM;
 		}
 		if (isFitting(n)) {
-			PipeMount theirs = n.getValue(MOUNT);
-			return theirs == PipeMount.AIR ? PipeMount.AIR : PipeMount.LINE;
+			return switch (n.getValue(MOUNT)) {
+				case AIR -> PipeMount.AIR;
+				case DRUM -> PipeMount.DRUM;
+				case BOX, LINE -> PipeMount.LINE;
+			};
 		}
 		return PipeMount.AIR;
 	}
