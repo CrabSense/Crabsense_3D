@@ -64,8 +64,10 @@ public class PvcFittingBlock extends Block {
 		Direction prefer = context.getClickedFace().getOpposite();
 		Direction toward = towardPipe(context.getLevel(), pos, prefer);
 		PipeMount mount = mountAt(context.getLevel(), pos, toward);
-		Direction facing = toward != null ? toward : context.getHorizontalDirection();
-		if (toward == null) {
+		Direction facing = toward != null && toward.getAxis().isHorizontal()
+			? toward
+			: context.getHorizontalDirection();
+		if (toward == null || toward.getAxis().isVertical()) {
 			Direction clicked = context.getClickedFace();
 			if (clicked.getAxis().isHorizontal()) {
 				facing = kind == Kind.CAP ? clicked.getOpposite() : clicked;
@@ -84,7 +86,7 @@ public class PvcFittingBlock extends Block {
 		Direction toward = towardPipe(level, pos, state.getValue(FACING));
 		PipeMount mount = mountAt(level, pos, toward);
 		BlockState next = state.setValue(MOUNT, mount);
-		if (mount != PipeMount.AIR && toward != null) {
+		if (mount != PipeMount.AIR && toward != null && toward.getAxis().isHorizontal()) {
 			next = next.setValue(FACING, toward);
 		}
 		PipeSize dn = PipeSizes.of(neighborState, neighborPos, Vec3.atCenterOf(neighborPos), direction.getOpposite());
@@ -135,14 +137,14 @@ public class PvcFittingBlock extends Block {
 	}
 
 	static Direction towardPipe(LevelReader level, BlockPos pos, Direction prefer) {
-		if (isBox(level.getBlockState(pos.relative(prefer)))) {
+		if (prefer.getAxis().isHorizontal() && isBox(level.getBlockState(pos.relative(prefer)))) {
 			return prefer;
 		}
 		Direction box = neighborKind(level, pos, PvcFittingBlock::isBox);
 		if (box != null) {
 			return box;
 		}
-		if (isFitting(level.getBlockState(pos.relative(prefer)))) {
+		if (prefer.getAxis().isHorizontal() && isFitting(level.getBlockState(pos.relative(prefer)))) {
 			return prefer;
 		}
 		Direction fit = neighborKind(level, pos, PvcFittingBlock::isFitting);
@@ -157,7 +159,7 @@ public class PvcFittingBlock extends Block {
 				return dir;
 			}
 		}
-		if (isDrum(level.getBlockState(pos.relative(prefer)))) {
+		if (prefer.getAxis().isHorizontal() && isDrum(level.getBlockState(pos.relative(prefer)))) {
 			return prefer;
 		}
 		return neighborKind(level, pos, PvcFittingBlock::isDrum);
