@@ -135,6 +135,13 @@ public class PvcFittingBlock extends Block {
 				bend = PipeBend.UP;
 			}
 		}
+		boolean standpipe = kind == Kind.PIPE && (bend == PipeBend.UP || bend == PipeBend.DOWN);
+		if (!verticalClick && !standpipe && mount == PipeMount.AIR) {
+			PipeMount snap = heightFromNeighbors(context.getLevel(), pos);
+			if (snap != PipeMount.AIR) {
+				mount = snap;
+			}
+		}
 		BlockState here = context.getLevel().getBlockState(pos);
 		if (!verticalClick && here.getBlock() instanceof PvcFittingBlock) {
 			PipeMount was = here.getValue(MOUNT);
@@ -170,8 +177,16 @@ public class PvcFittingBlock extends Block {
 		if (cur == PipeMount.DRUM || cur == PipeMount.DRUM_HIGH || cur == PipeMount.DRUM_BOTH) {
 			return state;
 		}
+		PipeBend bend = state.getValue(BEND);
+		if (kind == Kind.PIPE && (bend == PipeBend.UP || bend == PipeBend.DOWN)) {
+			return state.setValue(MOUNT, PipeMount.AIR);
+		}
 		Direction toward = towardPipe(level, pos, state.getValue(FACING));
-		return state.setValue(MOUNT, mountAt(level, pos, toward, cur));
+		PipeMount mount = mountAt(level, pos, toward, cur);
+		if (mount == PipeMount.AIR) {
+			mount = heightFromNeighbors(level, pos);
+		}
+		return state.setValue(MOUNT, mount);
 	}
 
 	@Override
@@ -321,6 +336,23 @@ public class PvcFittingBlock extends Block {
 
 	static boolean attachable(BlockState n, Direction fromHereToThem) {
 		return isFitting(n) || isBox(n) || isOutletToward(n, fromHereToThem) || isDrum(n);
+	}
+
+	static PipeMount heightFromNeighbors(LevelReader level, BlockPos pos) {
+		for (Direction dir : Direction.Plane.HORIZONTAL) {
+			BlockState n = level.getBlockState(pos.relative(dir));
+			if (isBox(n)) {
+				return PipeMount.BOX;
+			}
+			if (n.getBlock() instanceof PvcFittingBlock) {
+				PipeMount theirs = n.getValue(MOUNT);
+				if (theirs == PipeMount.AIR) {
+					continue;
+				}
+				return theirs == PipeMount.DRUM_BOTH ? PipeMount.DRUM : theirs;
+			}
+		}
+		return PipeMount.AIR;
 	}
 
 	static PipeMount mountAt(LevelReader level, BlockPos pos, Direction toward, PipeMount current) {
