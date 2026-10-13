@@ -103,20 +103,40 @@ public class PvcFittingBlock extends Block {
 			}
 		}
 		PipeBend bend = PipeBend.LEFT;
-		if (prefer.getAxis().isVertical()) {
-			bend = prefer == Direction.DOWN ? PipeBend.DOWN : PipeBend.UP;
+		if (toward != null) {
+			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
+			if (n.getBlock() instanceof PvcFittingBlock) {
+				PipeMount theirs = n.getValue(MOUNT);
+				if (theirs == PipeMount.DRUM_BOTH) {
+					if (ly >= 6.0) {
+						facing = n.getValue(HIGH_FACING);
+						bend = n.getValue(HIGH_BEND);
+					} else {
+						facing = n.getValue(FACING);
+						bend = n.getValue(BEND);
+					}
+				} else if (theirs == PipeMount.DRUM || theirs == PipeMount.DRUM_HIGH) {
+					facing = n.getValue(FACING);
+					bend = n.getValue(BEND);
+				}
+			}
 		}
-		if (isFitting(context.getLevel().getBlockState(pos.below()))
-			|| isOutletDrum(context.getLevel().getBlockState(pos.below()))) {
-			bend = kind == Kind.PIPE ? PipeBend.UP : PipeBend.DOWN;
-		} else if (isFitting(context.getLevel().getBlockState(pos.above()))) {
-			bend = PipeBend.UP;
+		if (mount != PipeMount.DRUM && mount != PipeMount.DRUM_HIGH && mount != PipeMount.DRUM_BOTH) {
+			if (prefer.getAxis().isVertical()) {
+				bend = prefer == Direction.DOWN ? PipeBend.DOWN : PipeBend.UP;
+			}
+			if (isFitting(context.getLevel().getBlockState(pos.below()))
+				|| isOutletDrum(context.getLevel().getBlockState(pos.below()))) {
+				bend = kind == Kind.PIPE ? PipeBend.UP : PipeBend.DOWN;
+			} else if (isFitting(context.getLevel().getBlockState(pos.above()))) {
+				bend = PipeBend.UP;
+			}
 		}
 		BlockState here = context.getLevel().getBlockState(pos);
 		if (here.getBlock() instanceof PvcFittingBlock existing) {
 			PipeMount was = here.getValue(MOUNT);
 			if (was == PipeMount.DRUM && ly >= 6.0) {
-				return addHighLane(here, facing, bend, kind);
+				return addHighLane(here, context.getHorizontalDirection(), PipeBend.LEFT, kind);
 			}
 			if (was == PipeMount.DRUM_HIGH && ly < 6.0) {
 				return addLowLane(here, this, facing, bend);
@@ -184,9 +204,9 @@ public class PvcFittingBlock extends Block {
 			double ly = (hit.getLocation().y - pos.getY()) * 16.0;
 			BlockState merged = null;
 			if (was == PipeMount.DRUM && ly >= 6.0) {
-				merged = addHighLane(state, state.getValue(FACING), PipeBend.LEFT, held.kind());
+				merged = addHighLane(state, player.getDirection(), PipeBend.LEFT, held.kind());
 			} else if (was == PipeMount.DRUM_HIGH && ly < 6.0) {
-				merged = addLowLane(state, held, state.getValue(FACING), PipeBend.LEFT);
+				merged = addLowLane(state, held, player.getDirection(), PipeBend.LEFT);
 			}
 			if (merged != null) {
 				if (!level.isClientSide()) {
@@ -196,6 +216,12 @@ public class PvcFittingBlock extends Block {
 					}
 				}
 				return InteractionResult.SUCCESS;
+			}
+			if (was == PipeMount.DRUM || was == PipeMount.DRUM_HIGH || was == PipeMount.DRUM_BOTH) {
+				BlockPos adj = pos.relative(hit.getDirection());
+				if (!level.getBlockState(adj).isAir()) {
+					return useWithoutItem(state, level, pos, player, hit);
+				}
 			}
 		}
 		return InteractionResult.PASS;
@@ -223,14 +249,18 @@ public class PvcFittingBlock extends Block {
 	BlockState turn(BlockState state, BlockHitResult hit, BlockPos pos) {
 		boolean high = state.getValue(MOUNT) == PipeMount.DRUM_BOTH
 			&& (hit.getLocation().y - pos.getY()) * 16.0 >= 6.0;
-		return high ? turnLane(state, HIGH_FACING, HIGH_BEND, false) : turnLane(state, FACING, BEND, true);
+		Kind lane = high ? state.getValue(HIGH_KIND) : kind;
+		return high
+			? turnLane(state, HIGH_FACING, HIGH_BEND, false, lane)
+			: turnLane(state, FACING, BEND, true, lane);
 	}
 
-	BlockState turnLane(BlockState state, EnumProperty<Direction> facingProp, EnumProperty<PipeBend> bendProp, boolean movePort) {
-		if (kind == Kind.CAP) {
+	BlockState turnLane(BlockState state, EnumProperty<Direction> facingProp, EnumProperty<PipeBend> bendProp,
+			boolean movePort, Kind lane) {
+		if (lane == Kind.CAP) {
 			return state.setValue(facingProp, state.getValue(facingProp).getClockWise());
 		}
-		if (kind == Kind.PIPE) {
+		if (lane == Kind.PIPE) {
 			if (state.getValue(bendProp) == PipeBend.UP || state.getValue(bendProp) == PipeBend.DOWN) {
 				return state.setValue(bendProp, PipeBend.LEFT);
 			}
@@ -245,7 +275,7 @@ public class PvcFittingBlock extends Block {
 		if (next != PipeBend.LEFT) {
 			return out;
 		}
-		if (kind == Kind.TEE && movePort) {
+		if (lane == Kind.TEE && movePort) {
 			PipePort port = state.getValue(PORT).other();
 			out = out.setValue(PORT, port);
 			if (port == PipePort.SIDES) {
