@@ -6,7 +6,8 @@ import net.minecraft.util.StringRepresentable;
 public enum PipeMount implements StringRepresentable {
 	AIR,
 	BOX,
-	LINE;
+	LINE,
+	DRUM;
 
 	@Override
 	public String getSerializedName() {

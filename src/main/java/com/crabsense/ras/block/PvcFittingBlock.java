@@ -168,8 +168,11 @@ public class PvcFittingBlock extends Block {
 			return PipeMount.AIR;
 		}
 		BlockState n = level.getBlockState(pos.relative(toward));
-		if (isBox(n) || isOutletDrum(n)) {
+		if (isBox(n)) {
 			return PipeMount.BOX;
+		}
+		if (isOutletDrum(n)) {
+			return PipeMount.DRUM;
 		}
 		if (isFitting(n)) {
 			PipeMount theirs = n.getValue(MOUNT);

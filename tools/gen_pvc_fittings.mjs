@@ -211,12 +211,46 @@ for (const kind of kinds) {
 			if (bend === "up" || bend === "down") return `crabsense_ras:block/pvc_tee_dn${dn}_stem_${bend}`;
 			return `crabsense_ras:block/pvc_tee_dn${dn}_stem`;
 		};
+		const drumDy = 3.2 - 8;
+		const shiftY = (elements) =>
+			elements.map((el) => ({
+				...el,
+				from: [el.from[0], round(el.from[1] + drumDy), el.from[2]],
+				to: [el.to[0], round(el.to[1] + drumDy), el.to[2]],
+			}));
+		const drumBase = `pvc_${kind}_dn${dn}_drum`;
+		write(drumBase, shiftY(maker(dn)));
+		if (kind === "tee") {
+			write(`${drumBase}_up`, shiftY(freeTeeUp(dn)));
+			write(`${drumBase}_down`, shiftY(freeTeeDown(dn)));
+			write(`${drumBase}_stem`, shiftY(freeTeeStem(dn)));
+			write(`${drumBase}_stem_up`, shiftY(freeTeeStemUp(dn)));
+			write(`${drumBase}_stem_down`, shiftY(freeTeeStemDown(dn)));
+		}
+		if (kind === "elbow") {
+			write(`${drumBase}_up`, shiftY(freeElbowUp(dn)));
+			write(`${drumBase}_down`, shiftY(freeElbowDown(dn)));
+		}
+		const drumModel = (bend, port) => {
+			if (kind === "tee" && port === "stem") {
+				if (bend === "up" || bend === "down") return `crabsense_ras:block/${drumBase}_stem_${bend}`;
+				return `crabsense_ras:block/${drumBase}_stem`;
+			}
+			if ((kind === "tee" || kind === "elbow") && (bend === "up" || bend === "down")) {
+				return `crabsense_ras:block/${drumBase}_${bend}`;
+			}
+			return `crabsense_ras:block/${drumBase}`;
+		};
 		for (const facing of facings) {
 			for (const bend of bends) {
 				const sides = { model: freeModel(kind, dn, bend), y: yFor(facing, bend) };
 				const stem = { model: stemFree(bend), y: yFor(facing, bend) };
 				for (const [port, spec] of [["sides", sides], ["stem", stem]]) {
 					variants[`dn=${dn},facing=${facing},bend=${bend},mount=air,port=${port}`] = spec;
+					variants[`dn=${dn},facing=${facing},bend=${bend},mount=drum,port=${port}`] = {
+						model: drumModel(bend, port),
+						y: yFor(facing, bend),
+					};
 					if (dn === 60) {
 						variants[`dn=${dn},facing=${facing},bend=${bend},mount=box,port=${port}`] = spec;
 						variants[`dn=${dn},facing=${facing},bend=${bend},mount=line,port=${port}`] = spec;
@@ -253,6 +287,7 @@ const tee = JSON.parse(fs.readFileSync("src/main/resources/assets/crabsense_ras/
 const keys = Object.keys(tee.variants);
 if (!keys.includes("dn=34,facing=south,bend=down,mount=air,port=sides")) throw new Error("missing tee down");
 if (!keys.includes("dn=34,facing=south,bend=left,mount=line,port=stem")) throw new Error("missing tee stem line");
+if (!keys.includes("dn=34,facing=east,bend=left,mount=drum,port=sides")) throw new Error("missing drum mount");
 if (tee.variants["dn=34,facing=south,bend=right,mount=air,port=sides"].y !== 180) throw new Error("right should y+180");
 if (!tee.variants["dn=34,facing=south,bend=up,mount=air,port=sides"].model.endsWith("_up")) throw new Error("up model");
 if (!tee.variants["dn=34,facing=south,bend=left,mount=air,port=stem"].model.includes("stem")) throw new Error("stem model");
