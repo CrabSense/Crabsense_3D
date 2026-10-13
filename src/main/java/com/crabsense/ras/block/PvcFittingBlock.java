@@ -6,6 +6,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -114,21 +115,11 @@ public class PvcFittingBlock extends Block {
 		BlockState here = context.getLevel().getBlockState(pos);
 		if (here.getBlock() instanceof PvcFittingBlock existing) {
 			PipeMount was = here.getValue(MOUNT);
-			if (was == PipeMount.DRUM && mount == PipeMount.DRUM_HIGH) {
-				return here.setValue(MOUNT, PipeMount.DRUM_BOTH)
-					.setValue(HIGH_FACING, facing)
-					.setValue(HIGH_BEND, bend)
-					.setValue(HIGH_KIND, kind);
+			if (was == PipeMount.DRUM && ly >= 6.0) {
+				return addHighLane(here, facing, bend, kind);
 			}
-			if (was == PipeMount.DRUM_HIGH && mount == PipeMount.DRUM) {
-				return defaultBlockState()
-					.setValue(MOUNT, PipeMount.DRUM_BOTH)
-					.setValue(DN, here.getValue(DN))
-					.setValue(FACING, facing)
-					.setValue(BEND, bend)
-					.setValue(HIGH_FACING, here.getValue(FACING))
-					.setValue(HIGH_BEND, here.getValue(BEND))
-					.setValue(HIGH_KIND, existing.kind());
+			if (was == PipeMount.DRUM_HIGH && ly < 6.0) {
+				return addLowLane(here, this, facing, bend);
 			}
 			if (was == PipeMount.DRUM_BOTH) {
 				return here;
@@ -169,12 +160,64 @@ public class PvcFittingBlock extends Block {
 	}
 
 	@Override
+	protected boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+		if (!(context.getItemInHand().getItem() instanceof BlockItem item)
+			|| !(item.getBlock() instanceof PvcFittingBlock)) {
+			return false;
+		}
+		PipeMount was = state.getValue(MOUNT);
+		if (was != PipeMount.DRUM && was != PipeMount.DRUM_HIGH) {
+			return false;
+		}
+		double ly = (context.getClickLocation().y - context.getClickedPos().getY()) * 16.0;
+		return was == PipeMount.DRUM ? ly >= 6.0 : ly < 6.0;
+	}
+
+	@Override
 	protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
 			Player player, InteractionHand hand, BlockHitResult hit) {
 		if (stack.isEmpty() || player.isSecondaryUseActive()) {
 			return useWithoutItem(state, level, pos, player, hit);
 		}
+		if (stack.getItem() instanceof BlockItem item && item.getBlock() instanceof PvcFittingBlock held) {
+			PipeMount was = state.getValue(MOUNT);
+			double ly = (hit.getLocation().y - pos.getY()) * 16.0;
+			BlockState merged = null;
+			if (was == PipeMount.DRUM && ly >= 6.0) {
+				merged = addHighLane(state, state.getValue(FACING), PipeBend.LEFT, held.kind());
+			} else if (was == PipeMount.DRUM_HIGH && ly < 6.0) {
+				merged = addLowLane(state, held, state.getValue(FACING), PipeBend.LEFT);
+			}
+			if (merged != null) {
+				if (!level.isClientSide()) {
+					level.setBlock(pos, merged, 3);
+					if (!player.getAbilities().instabuild) {
+						stack.shrink(1);
+					}
+				}
+				return InteractionResult.SUCCESS;
+			}
+		}
 		return InteractionResult.PASS;
+	}
+
+	static BlockState addHighLane(BlockState low, Direction facing, PipeBend bend, Kind highKind) {
+		return low.setValue(MOUNT, PipeMount.DRUM_BOTH)
+			.setValue(HIGH_FACING, facing)
+			.setValue(HIGH_BEND, bend)
+			.setValue(HIGH_KIND, highKind);
+	}
+
+	static BlockState addLowLane(BlockState high, PvcFittingBlock lowKind, Direction facing, PipeBend bend) {
+		PvcFittingBlock existed = (PvcFittingBlock) high.getBlock();
+		return lowKind.defaultBlockState()
+			.setValue(MOUNT, PipeMount.DRUM_BOTH)
+			.setValue(DN, high.getValue(DN))
+			.setValue(FACING, facing)
+			.setValue(BEND, bend)
+			.setValue(HIGH_FACING, high.getValue(FACING))
+			.setValue(HIGH_BEND, high.getValue(BEND))
+			.setValue(HIGH_KIND, existed.kind());
 	}
 
 	BlockState turn(BlockState state, BlockHitResult hit, BlockPos pos) {
@@ -308,10 +351,7 @@ public class PvcFittingBlock extends Block {
 	@Override
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		PipeMount mount = state.getValue(MOUNT);
-		if (mount == PipeMount.DRUM_HIGH) {
-			return Shapes.box(0.05, 0.40, 0.05, 0.95, 0.75, 0.95);
-		}
-		if (mount == PipeMount.DRUM_BOTH) {
+		if (mount == PipeMount.DRUM || mount == PipeMount.DRUM_HIGH || mount == PipeMount.DRUM_BOTH) {
 			return Shapes.box(0.05, 0.0, 0.05, 0.95, 0.75, 0.95);
 		}
 		if (mount != PipeMount.AIR) {
