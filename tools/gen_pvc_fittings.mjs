@@ -103,18 +103,22 @@ function freeTeeStem(dn) {
 function freeTeeStemUp(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
-		cube("bar", [round(8 - h), 8, round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
+		cube("stem", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeStemDown(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
-		cube("bar", [round(8 - h), 0, round(8 - h)], [round(8 + h), 8, round(8 + h)]),
+		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
+		cube("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
+}
+function freePipeUp(dn) {
+	const h = Math.max(0.55, od(dn) / 2);
+	return [cube("run", [round(8 - h), 0, round(8 - h)], [round(8 + h), 16, round(8 + h)])];
 }
 
 function lowParts(kind, dn, facing, bend, mount, port = "sides") {
@@ -186,6 +190,7 @@ const bends = ["left", "right", "up", "down"];
 const rot = { south: 0, west: 90, north: 180, east: 270 };
 const yFor = (facing, bend) => (rot[facing] + (bend === "right" ? 180 : 0)) % 360;
 const freeModel = (kind, dn, bend) => {
+	if (kind === "pipe" && (bend === "up" || bend === "down")) return `crabsense_ras:block/pvc_pipe_dn${dn}_up`;
 	if (kind === "cap" || kind === "pipe" || bend === "left" || bend === "right") return `crabsense_ras:block/pvc_${kind}_dn${dn}`;
 	return `crabsense_ras:block/pvc_${kind}_dn${dn}_${bend}`;
 };
@@ -205,6 +210,9 @@ for (const kind of kinds) {
 		if (kind === "elbow") {
 			write(`pvc_elbow_dn${dn}_up`, freeElbowUp(dn));
 			write(`pvc_elbow_dn${dn}_down`, freeElbowDown(dn));
+		}
+		if (kind === "pipe") {
+			write(`pvc_pipe_dn${dn}_up`, freePipeUp(dn));
 		}
 		const stemFree = (bend) => {
 			if (kind !== "tee") return freeModel(kind, dn, bend);
@@ -235,6 +243,9 @@ for (const kind of kinds) {
 			if (kind === "tee" && port === "stem") {
 				if (bend === "up" || bend === "down") return `crabsense_ras:block/${drumBase}_stem_${bend}`;
 				return `crabsense_ras:block/${drumBase}_stem`;
+			}
+			if (kind === "pipe" && (bend === "up" || bend === "down")) {
+				return `crabsense_ras:block/pvc_pipe_dn${dn}_up`;
 			}
 			if ((kind === "tee" || kind === "elbow") && (bend === "up" || bend === "down")) {
 				return `crabsense_ras:block/${drumBase}_${bend}`;

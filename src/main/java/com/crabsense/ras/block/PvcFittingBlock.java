@@ -73,10 +73,14 @@ public class PvcFittingBlock extends Block {
 				facing = kind == Kind.CAP ? clicked.getOpposite() : clicked;
 			}
 		}
+		PipeBend bend = PipeBend.LEFT;
+		if (prefer.getAxis().isVertical()) {
+			bend = prefer == Direction.DOWN ? PipeBend.DOWN : PipeBend.UP;
+		}
 		return defaultBlockState()
 			.setValue(MOUNT, mount)
 			.setValue(FACING, facing)
-			.setValue(BEND, PipeBend.LEFT)
+			.setValue(BEND, bend)
 			.setValue(DN, PipeSizes.fromNeighbors(context.getLevel(), pos, context.getClickLocation()));
 	}
 
@@ -111,8 +115,18 @@ public class PvcFittingBlock extends Block {
 	}
 
 	BlockState turn(BlockState state) {
-		if (kind == Kind.CAP || kind == Kind.PIPE) {
+		if (kind == Kind.CAP) {
 			return state.setValue(FACING, state.getValue(FACING).getClockWise());
+		}
+		if (kind == Kind.PIPE) {
+			if (state.getValue(BEND) == PipeBend.UP || state.getValue(BEND) == PipeBend.DOWN) {
+				return state.setValue(BEND, PipeBend.LEFT);
+			}
+			Direction next = state.getValue(FACING).getClockWise();
+			if (next == Direction.NORTH) {
+				return state.setValue(FACING, next).setValue(BEND, PipeBend.UP);
+			}
+			return state.setValue(FACING, next);
 		}
 		PipeBend next = state.getValue(BEND).next();
 		BlockState out = state.setValue(BEND, next);
