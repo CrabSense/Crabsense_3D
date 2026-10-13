@@ -6,7 +6,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -138,16 +137,6 @@ public class PvcFittingBlock extends Block {
 			}
 		}
 		return placed;
-	}
-
-	@Override
-	protected boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
-		if (!(context.getItemInHand().getItem() instanceof BlockItem item)
-				|| !(item.getBlock() instanceof PvcFittingBlock)) {
-			return false;
-		}
-		PipeMount mount = state.getValue(MOUNT);
-		return mount == PipeMount.DRUM || mount == PipeMount.DRUM_HIGH;
 	}
 
 	@Override
