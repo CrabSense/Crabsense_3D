@@ -64,6 +64,7 @@
 	},
 	"textures": {
 		"pvc": "crabsense_ras:block/drum_pvc",
+		"hole": "minecraft:block/black_concrete",
 		"particle": "crabsense_ras:block/drum_pvc"
 	},
 	"elements": [

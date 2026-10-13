@@ -12,6 +12,51 @@ const pvc = () => ({
 	down: { uv: [0, 0, 16, 16], texture: "#pvc" },
 });
 const cube = (name, from, to) => ({ name, from, to, faces: pvc() });
+const holeFaces = () => ({
+	north: { uv: [0, 0, 16, 16], texture: "#hole" },
+	east: { uv: [0, 0, 16, 16], texture: "#hole" },
+	south: { uv: [0, 0, 16, 16], texture: "#hole" },
+	west: { uv: [0, 0, 16, 16], texture: "#hole" },
+	up: { uv: [0, 0, 16, 16], texture: "#hole" },
+	down: { uv: [0, 0, 16, 16], texture: "#hole" },
+});
+const holeCube = (name, from, to) => ({ name, from, to, faces: holeFaces() });
+/** Square tube: four walls plus a dark bore on each open end so it reads as a water pipe. */
+function arm(name, from, to) {
+	const x0 = round(from[0]), y0 = round(from[1]), z0 = round(from[2]);
+	const x1 = round(to[0]), y1 = round(to[1]), z1 = round(to[2]);
+	const dx = x1 - x0, dy = y1 - y0, dz = z1 - z0;
+	const w = round(Math.min(0.22, Math.min(Math.abs(dx), Math.abs(dy), Math.abs(dz)) * 0.28));
+	if (w < 0.12) return [cube(name, [x0, y0, z0], [x1, y1, z1])];
+	if (Math.abs(dz) >= Math.abs(dx) && Math.abs(dz) >= Math.abs(dy)) {
+		return [
+			cube(`${name}_dn`, [x0, y0, z0], [x1, y0 + w, z1]),
+			cube(`${name}_up`, [x0, y1 - w, z0], [x1, y1, z1]),
+			cube(`${name}_we`, [x0, y0 + w, z0], [x0 + w, y1 - w, z1]),
+			cube(`${name}_ea`, [x1 - w, y0 + w, z0], [x1, y1 - w, z1]),
+			holeCube(`${name}_a`, [x0 + w, y0 + w, z0], [x1 - w, y1 - w, round(z0 + 0.05)]),
+			holeCube(`${name}_b`, [x0 + w, y0 + w, round(z1 - 0.05)], [x1 - w, y1 - w, z1]),
+		];
+	}
+	if (Math.abs(dx) >= Math.abs(dy)) {
+		return [
+			cube(`${name}_dn`, [x0, y0, z0], [x1, y0 + w, z1]),
+			cube(`${name}_up`, [x0, y1 - w, z0], [x1, y1, z1]),
+			cube(`${name}_no`, [x0, y0 + w, z0], [x1, y1 - w, z0 + w]),
+			cube(`${name}_so`, [x0, y0 + w, z1 - w], [x1, y1 - w, z1]),
+			holeCube(`${name}_a`, [x0, y0 + w, z0 + w], [round(x0 + 0.05), y1 - w, z1 - w]),
+			holeCube(`${name}_b`, [round(x1 - 0.05), y0 + w, z0 + w], [x1, y1 - w, z1 - w]),
+		];
+	}
+	return [
+		cube(`${name}_we`, [x0, y0, z0], [x0 + w, y1, z1]),
+		cube(`${name}_ea`, [x1 - w, y0, z0], [x1, y1, z1]),
+		cube(`${name}_no`, [x0 + w, y0, z0], [x1 - w, y1, z0 + w]),
+		cube(`${name}_so`, [x0 + w, y0, z1 - w], [x1 - w, y1, z1]),
+		holeCube(`${name}_a`, [x0 + w, y0, z0 + w], [x1 - w, round(y0 + 0.05), z1 - w]),
+		holeCube(`${name}_b`, [x0 + w, round(y1 - 0.05), z0 + w], [x1 - w, y1, z1 - w]),
+	];
+}
 const model = (elements) => ({
 	format_version: "26.3",
 	ambientocclusion: false,
@@ -22,11 +67,15 @@ const model = (elements) => ({
 		firstperson_righthand: { rotation: [0, 45, 0], scale: [0.7, 0.7, 0.7] },
 		thirdperson_righthand: { rotation: [75, 45, 0], translation: [0, 2.5, 0], scale: [0.55, 0.55, 0.55] },
 	},
-	textures: { pvc: "crabsense_ras:block/drum_pvc", particle: "crabsense_ras:block/drum_pvc" },
+	textures: {
+		pvc: "crabsense_ras:block/drum_pvc",
+		hole: "minecraft:block/black_concrete",
+		particle: "crabsense_ras:block/drum_pvc",
+	},
 	elements,
 });
 const write = (name, elements) => {
-	fs.writeFileSync(`${dir}/${name}.json`, JSON.stringify(model(elements), null, "\t") + "\n");
+	fs.writeFileSync(`${dir}/${name}.json`, JSON.stringify(model(elements.flat()), null, "\t") + "\n");
 };
 
 function hub(dn, extra) {
@@ -36,89 +85,89 @@ function hub(dn, extra) {
 function freeTee(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
-		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
+		...arm("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
+		...arm("branch", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeUp(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
-		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		...arm("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
+		...arm("branch", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeDown(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
-		cube("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
+		...arm("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
+		...arm("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeElbow(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
-		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
+		...arm("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
+		...arm("out", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		hub(dn, 0.3),
 	];
 }
 function freeElbowUp(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
-		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		...arm("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
+		...arm("out", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		hub(dn, 0.3),
 	];
 }
 function freeElbowDown(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
-		cube("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
+		...arm("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
+		...arm("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
 		hub(dn, 0.3),
 	];
 }
 function freeCap(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("socket", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
+		...arm("socket", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
 		cube("plug", [round(8 - h - 0.35), round(8 - h - 0.35), 7.2], [round(8 + h + 0.35), round(8 + h + 0.35), 8.4]),
 	];
 }
 function freePipe(dn) {
 	const h = (od(dn) / 2);
-	return [cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16])];
+	return arm("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]);
 }
 function freeTeeStem(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
-		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
+		...arm("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
+		...arm("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeStemUp(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
-		cube("stem", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		...arm("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
+		...arm("stem", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeStemDown(dn) {
 	const h = (od(dn) / 2);
 	return [
-		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
-		cube("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
+		...arm("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
+		...arm("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freePipeUp(dn) {
 	const h = (od(dn) / 2);
-	return [cube("run", [round(8 - h), 0, round(8 - h)], [round(8 + h), 16, round(8 + h)])];
+	return arm("run", [round(8 - h), 0, round(8 - h)], [round(8 + h), 16, round(8 + h)]);
 }
 function drumHub(dn, y) {
 	const h = (od(dn) / 2) + 0.25;
@@ -127,48 +176,48 @@ function drumHub(dn, y) {
 function freeElbowUpDrum(dn, y) {
 	const h = (od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
-		cube("out", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		...arm("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
+		...arm("out", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		drumHub(dn, y),
 	];
 }
 function freeElbowDownDrum(dn, y) {
 	const h = (od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
-		cube("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
+		...arm("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
+		...arm("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
 		drumHub(dn, y),
 	];
 }
 function freeTeeUpDrum(dn, y) {
 	const h = (od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
-		cube("branch", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		...arm("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
+		...arm("branch", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		drumHub(dn, y),
 	];
 }
 function freeTeeDownDrum(dn, y) {
 	const h = (od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
-		cube("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
+		...arm("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
+		...arm("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
 		drumHub(dn, y),
 	];
 }
 function freeTeeStemUpDrum(dn, y) {
 	const h = (od(dn) / 2);
 	return [
-		cube("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
-		cube("stem", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		...arm("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
+		...arm("stem", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		drumHub(dn, y),
 	];
 }
 function freeTeeStemDownDrum(dn, y) {
 	const h = (od(dn) / 2);
 	return [
-		cube("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
-		cube("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
+		...arm("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
+		...arm("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
 		drumHub(dn, y),
 	];
 }
@@ -187,48 +236,48 @@ function lowParts(kind, dn, facing, bend, mount, port = "sides") {
 		? facing === "east" ? 14.3 : facing === "west" ? 1.7 : cx
 		: ns ? cx : 8;
 	const run = ns
-		? cube("run", [round(cx - h), y0, 0], [round(cx + h), y1, 16])
-		: cube("run", [0, y0, round(cz - h)], [16, y1, round(cz + h)]);
+		? arm("run", [round(cx - h), y0, 0], [round(cx + h), y1, 16])
+		: arm("run", [0, y0, round(cz - h)], [16, y1, round(cz + h)]);
 	const hx = round(hubX);
 	const hz = round(hubZ);
 	let branch;
 	if (bend === "up") {
-		branch = cube("branch", [round(hx - h), y1, round(hz - h)], [round(hx + h), y1 + 5, round(hz + h)]);
+		branch = arm("branch", [round(hx - h), y1, round(hz - h)], [round(hx + h), y1 + 5, round(hz + h)]);
 	} else if (bend === "down") {
-		branch = cube("branch", [round(hx - h), y0 - 5, round(hz - h)], [round(hx + h), y1, round(hz + h)]);
+		branch = arm("branch", [round(hx - h), y0 - 5, round(hz - h)], [round(hx + h), y1, round(hz + h)]);
 	} else if (ns) {
 		const left = bend === "left";
 		branch = left
-			? cube("branch", [round(cx - h), y0, round(hz - h)], [round(cx + h + 5), y1, round(hz + h)])
-			: cube("branch", [round(cx - h - 5), y0, round(hz - h)], [round(cx + h), y1, round(hz + h)]);
+			? arm("branch", [round(cx - h), y0, round(hz - h)], [round(cx + h + 5), y1, round(hz + h)])
+			: arm("branch", [round(cx - h - 5), y0, round(hz - h)], [round(cx + h), y1, round(hz + h)]);
 	} else {
 		const left = bend === "left";
 		branch = left
-			? cube("branch", [round(hx - h), y0, round(cz - h)], [round(hx + h), y1, round(cz + h + 5)])
-			: cube("branch", [round(hx - h), y0, round(cz - h - 5)], [round(hx + h), y1, round(cz + h)]);
+			? arm("branch", [round(hx - h), y0, round(cz - h)], [round(hx + h), y1, round(cz + h + 5)])
+			: arm("branch", [round(hx - h), y0, round(cz - h - 5)], [round(hx + h), y1, round(cz + h)]);
 	}
 	const hubEl = cube("hub", [round(hx - h - 0.12), y0 - 0.08, round(hz - h - 0.12)], [round(hx + h + 0.12), y1 + 0.12, round(hz + h + 0.12)]);
-	if (kind === "pipe") return [run];
+	if (kind === "pipe") return run;
 	let stem;
-	if (facing === "south") stem = cube("stem", [round(cx - h), y0, hz], [round(cx + h), y1, 16]);
-	else if (facing === "north") stem = cube("stem", [round(cx - h), y0, 0], [round(cx + h), y1, hz]);
-	else if (facing === "east") stem = cube("stem", [hx, y0, round(cz - h)], [16, y1, round(cz + h)]);
-	else stem = cube("stem", [0, y0, round(cz - h)], [hx, y1, round(cz + h)]);
+	if (facing === "south") stem = arm("stem", [round(cx - h), y0, hz], [round(cx + h), y1, 16]);
+	else if (facing === "north") stem = arm("stem", [round(cx - h), y0, 0], [round(cx + h), y1, hz]);
+	else if (facing === "east") stem = arm("stem", [hx, y0, round(cz - h)], [16, y1, round(cz + h)]);
+	else stem = arm("stem", [0, y0, round(cz - h)], [hx, y1, round(cz + h)]);
 	if (kind === "tee" && port === "stem") {
 		let bar;
 		if (bend === "up") {
-			bar = cube("bar", [round(hx - h), y0 - 5, round(hz - h)], [round(hx + h), y1 + 5, round(hz + h)]);
+			bar = arm("bar", [round(hx - h), y0 - 5, round(hz - h)], [round(hx + h), y1 + 5, round(hz + h)]);
 		} else if (bend === "down") {
-			bar = cube("bar", [round(hx - h), y0 - 5, round(hz - h)], [round(hx + h), y1 + 5, round(hz + h)]);
+			bar = arm("bar", [round(hx - h), y0 - 5, round(hz - h)], [round(hx + h), y1 + 5, round(hz + h)]);
 		} else if (ns) {
-			bar = cube("bar", [0, y0, round(hz - h)], [16, y1, round(hz + h)]);
+			bar = arm("bar", [0, y0, round(hz - h)], [16, y1, round(hz + h)]);
 		} else {
-			bar = cube("bar", [round(hx - h), y0, 0], [round(hx + h), y1, 16]);
+			bar = arm("bar", [round(hx - h), y0, 0], [round(hx + h), y1, 16]);
 		}
-		return [stem, bar, hubEl];
+		return [...stem, ...bar, hubEl];
 	}
-	if (kind === "tee") return [run, branch, hubEl];
-	if (kind === "elbow") return mount === "box" ? [branch, hubEl] : [stem, branch, hubEl];
+	if (kind === "tee") return [...run, ...branch, hubEl];
+	if (kind === "elbow") return mount === "box" ? [...branch, hubEl] : [...stem, ...branch, hubEl];
 	const plug = ns
 		? cube("plug", [round(cx - h - 0.2), y0 - 0.2, facing === "south" ? 14.6 : 0.2], [round(cx + h + 0.2), y1 + 0.2, facing === "south" ? 15.8 : 1.4])
 		: cube("plug", [facing === "east" ? 14.6 : 0.2, y0 - 0.2, round(cz - h - 0.2)], [facing === "east" ? 15.8 : 1.4, y1 + 0.2, round(cz + h + 0.2)]);
