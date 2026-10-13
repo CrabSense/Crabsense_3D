@@ -279,24 +279,37 @@ for (const kind of kinds) {
 				to: [el.to[0], round(el.to[1] + dy), el.to[2]],
 			}));
 		};
-		const writeDrumLane = (suffix, y) => {
-			const base = `pvc_${kind}_dn${dn}_drum${suffix}`;
-			write(base, shiftY(maker(dn), y));
+		const drumLane = (y) => {
+			const parts = { "": shiftY(maker(dn), y) };
 			if (kind === "tee") {
-				write(`${base}_up`, freeTeeUpDrum(dn, y));
-				write(`${base}_down`, freeTeeDownDrum(dn, y));
-				write(`${base}_stem`, shiftY(freeTeeStem(dn), y));
-				write(`${base}_stem_up`, freeTeeStemUpDrum(dn, y));
-				write(`${base}_stem_down`, freeTeeStemDownDrum(dn, y));
+				parts._up = freeTeeUpDrum(dn, y);
+				parts._down = freeTeeDownDrum(dn, y);
+				parts._stem = shiftY(freeTeeStem(dn), y);
+				parts._stem_up = freeTeeStemUpDrum(dn, y);
+				parts._stem_down = freeTeeStemDownDrum(dn, y);
 			}
 			if (kind === "elbow") {
-				write(`${base}_up`, freeElbowUpDrum(dn, y));
-				write(`${base}_down`, freeElbowDownDrum(dn, y));
+				parts._up = freeElbowUpDrum(dn, y);
+				parts._down = freeElbowDownDrum(dn, y);
+			}
+			return parts;
+		};
+		const lowLane = drumLane(3.2);
+		const highLane = drumLane(9.4);
+		const writeLane = (suffix, parts) => {
+			const base = `pvc_${kind}_dn${dn}_drum${suffix}`;
+			for (const [tag, els] of Object.entries(parts)) {
+				write(`${base}${tag}`, els);
 			}
 			return base;
 		};
-		const drumLow = writeDrumLane("", 3.2);
-		const drumHigh = writeDrumLane("_high", 9.4);
+		const drumLow = writeLane("", lowLane);
+		const drumHigh = writeLane("_high", highLane);
+		const bothLane = {};
+		for (const tag of Object.keys(lowLane)) {
+			bothLane[tag] = [...lowLane[tag], ...highLane[tag]];
+		}
+		const drumBoth = writeLane("_both", bothLane);
 		const drumModel = (base, bend, port) => {
 			if (kind === "tee" && port === "stem") {
 				if (bend === "up" || bend === "down") return `crabsense_ras:block/${base}_stem_${bend}`;
@@ -325,10 +338,10 @@ for (const kind of kinds) {
 						model: drumModel(drumHigh, bend, port),
 						y: yaw,
 					};
-					variants[`dn=${dn},facing=${facing},bend=${bend},mount=drum_both,port=${port}`] = [
-						{ model: drumModel(drumLow, bend, port), y: yaw },
-						{ model: drumModel(drumHigh, bend, port), y: yaw },
-					];
+					variants[`dn=${dn},facing=${facing},bend=${bend},mount=drum_both,port=${port}`] = {
+						model: drumModel(drumBoth, bend, port),
+						y: yaw,
+					};
 					if (dn === 60) {
 						variants[`dn=${dn},facing=${facing},bend=${bend},mount=box,port=${port}`] = spec;
 						variants[`dn=${dn},facing=${facing},bend=${bend},mount=line,port=${port}`] = spec;
@@ -367,7 +380,7 @@ if (!keys.includes("dn=34,facing=south,bend=down,mount=air,port=sides")) throw n
 if (!keys.includes("dn=34,facing=south,bend=left,mount=line,port=stem")) throw new Error("missing tee stem line");
 if (!keys.includes("dn=34,facing=east,bend=left,mount=drum,port=sides")) throw new Error("missing drum mount");
 if (!keys.includes("dn=60,facing=south,bend=left,mount=drum_high,port=sides")) throw new Error("missing drum high");
-if (!Array.isArray(tee.variants["dn=60,facing=south,bend=left,mount=drum_both,port=sides"])) throw new Error("missing drum both");
+if (!tee.variants["dn=60,facing=south,bend=left,mount=drum_both,port=sides"].model.includes("drum_both")) throw new Error("missing drum both");
 if (tee.variants["dn=34,facing=south,bend=right,mount=air,port=sides"].y !== 180) throw new Error("right should y+180");
 if (!tee.variants["dn=34,facing=south,bend=up,mount=air,port=sides"].model.endsWith("_up")) throw new Error("up model");
 if (!tee.variants["dn=34,facing=south,bend=left,mount=air,port=stem"].model.includes("stem")) throw new Error("stem model");

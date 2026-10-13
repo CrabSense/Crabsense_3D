@@ -6,6 +6,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -91,11 +92,31 @@ public class PvcFittingBlock extends Block {
 		} else if (isFitting(context.getLevel().getBlockState(pos.above()))) {
 			bend = PipeBend.UP;
 		}
+		BlockState here = context.getLevel().getBlockState(pos);
+		if (here.getBlock() instanceof PvcFittingBlock) {
+			PipeMount was = here.getValue(MOUNT);
+			if (was == PipeMount.DRUM_BOTH
+					|| mount == PipeMount.DRUM_BOTH
+					|| (was == PipeMount.DRUM && mount == PipeMount.DRUM_HIGH)
+					|| (was == PipeMount.DRUM_HIGH && mount == PipeMount.DRUM)) {
+				return here.setValue(MOUNT, PipeMount.DRUM_BOTH);
+			}
+		}
 		return defaultBlockState()
 			.setValue(MOUNT, mount)
 			.setValue(FACING, facing)
 			.setValue(BEND, bend)
 			.setValue(DN, PipeSizes.fromNeighbors(context.getLevel(), pos, context.getClickLocation()));
+	}
+
+	@Override
+	protected boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+		if (!(context.getItemInHand().getItem() instanceof BlockItem item)
+				|| !(item.getBlock() instanceof PvcFittingBlock)) {
+			return false;
+		}
+		PipeMount mount = state.getValue(MOUNT);
+		return mount == PipeMount.DRUM || mount == PipeMount.DRUM_HIGH;
 	}
 
 	@Override
