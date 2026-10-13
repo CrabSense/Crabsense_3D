@@ -68,12 +68,18 @@ public class PvcFittingBlock extends Block {
 		Direction prefer = context.getClickedFace().getOpposite();
 		Direction toward = towardPipe(context.getLevel(), pos, prefer);
 		PipeMount mount = mountAt(context.getLevel(), pos, toward, null);
-		if (mount == PipeMount.DRUM && toward != null) {
-			BlockPos drum = pos.relative(toward);
-			double ly = (context.getClickLocation().y - drum.getY()) * 16.0;
-			// North face of the filter has waste (y≈9.4) stacked over inlet (y≈2.8).
-			if (toward == Direction.SOUTH && ly >= 6.0) {
+		double ly = (context.getClickLocation().y - pos.getY()) * 16.0;
+		if (toward != null) {
+			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
+			if (n.getBlock() == RasBlocks.DRUM_FILTER && toward == Direction.SOUTH && ly >= 6.0) {
 				mount = PipeMount.DRUM_HIGH;
+			} else if (n.getBlock() instanceof PvcFittingBlock) {
+				PipeMount theirs = n.getValue(MOUNT);
+				if (theirs == PipeMount.DRUM_BOTH) {
+					mount = ly >= 6.0 ? PipeMount.DRUM_HIGH : PipeMount.DRUM;
+				} else if (theirs == PipeMount.DRUM || theirs == PipeMount.DRUM_HIGH) {
+					mount = theirs;
+				}
 			}
 		}
 		Direction facing = toward != null && toward.getAxis().isHorizontal()
@@ -124,19 +130,6 @@ public class PvcFittingBlock extends Block {
 			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
 			if (n.getBlock() instanceof PvcFittingBlock) {
 				placed = placed.setValue(DN, n.getValue(DN));
-				if (n.getValue(MOUNT) == PipeMount.DRUM_BOTH) {
-					placed = placed
-						.setValue(MOUNT, PipeMount.DRUM_BOTH)
-						.setValue(FACING, n.getValue(FACING))
-						.setValue(BEND, n.getValue(BEND))
-						.setValue(HIGH_FACING, n.getValue(HIGH_FACING))
-						.setValue(HIGH_BEND, n.getValue(HIGH_BEND));
-				} else if (n.getValue(MOUNT) == PipeMount.DRUM_HIGH) {
-					placed = placed
-						.setValue(MOUNT, PipeMount.DRUM_HIGH)
-						.setValue(FACING, n.getValue(FACING))
-						.setValue(BEND, n.getValue(BEND));
-				}
 			}
 		}
 		return placed;
@@ -145,10 +138,12 @@ public class PvcFittingBlock extends Block {
 	@Override
 	protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks,
 			BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+		PipeMount cur = state.getValue(MOUNT);
+		if (cur == PipeMount.DRUM || cur == PipeMount.DRUM_HIGH || cur == PipeMount.DRUM_BOTH) {
+			return state;
+		}
 		Direction toward = towardPipe(level, pos, state.getValue(FACING));
-		PipeMount mount = mountAt(level, pos, toward, state.getValue(MOUNT));
-		BlockState next = state.setValue(MOUNT, mount);
-		return next;
+		return state.setValue(MOUNT, mountAt(level, pos, toward, cur));
 	}
 
 	@Override
@@ -252,9 +247,14 @@ public class PvcFittingBlock extends Block {
 			return PipeMount.DRUM;
 		}
 		if (isFitting(n)) {
-			return switch (n.getValue(MOUNT)) {
+			PipeMount theirs = n.getValue(MOUNT);
+			if (current == PipeMount.DRUM || current == PipeMount.DRUM_HIGH || current == PipeMount.DRUM_BOTH) {
+				return current;
+			}
+			return switch (theirs) {
 				case AIR -> PipeMount.AIR;
-				case DRUM, DRUM_HIGH, DRUM_BOTH -> n.getValue(MOUNT);
+				case DRUM, DRUM_HIGH -> theirs;
+				case DRUM_BOTH -> PipeMount.DRUM;
 				case BOX, LINE -> PipeMount.LINE;
 			};
 		}
