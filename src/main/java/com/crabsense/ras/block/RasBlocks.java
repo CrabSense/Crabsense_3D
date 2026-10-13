@@ -38,6 +38,10 @@ public final class RasBlocks {
 	public static final Block DRUM_FILTER = register("drum_filter",
 		BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).noOcclusion().lightLevel(state -> 15),
 		DrumFilterBlock::new);
+	public static final Block BLUE_WATER_DRUM = register("blue_water_drum",
+		BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(1.0F).sound(SoundType.GLASS).noOcclusion());
+	public static final Block BLUE_WATER_DRUM_SIDE_OUTLET = register("blue_water_drum_side_outlet",
+		BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(1.0F).sound(SoundType.GLASS).noOcclusion());
 	private static BlockBehaviour.Properties pvcProps() {
 		return BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(0.8F).sound(SoundType.STONE).noOcclusion();
 	}
@@ -50,7 +54,7 @@ public final class RasBlocks {
 	public static final Block PVC_PIPE = register("pvc_pipe", pvcProps(),
 		p -> new PvcFittingBlock(PvcFittingBlock.Kind.PIPE, p));
 
-	public static final List<Block> ALL = List.of(TANK, PUMP, RACK, CRAB_BOX, DRUM_FILTER, PVC_TEE, PVC_ELBOW, PVC_CAP, PVC_PIPE);
+	public static final List<Block> ALL = List.of(TANK, PUMP, RACK, CRAB_BOX, DRUM_FILTER, BLUE_WATER_DRUM, BLUE_WATER_DRUM_SIDE_OUTLET, PVC_TEE, PVC_ELBOW, PVC_CAP, PVC_PIPE);
 
 	public static void register() {
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> ALL.forEach(entries::accept));

@@ -188,7 +188,8 @@ public class PvcFittingBlock extends Block {
 	}
 
 	static boolean isDrum(BlockState state) {
-		return state.getBlock() == RasBlocks.DRUM_FILTER;
+		return state.getBlock() == RasBlocks.DRUM_FILTER
+			|| state.getBlock() == RasBlocks.BLUE_WATER_DRUM_SIDE_OUTLET;
 	}
 
 	@Override

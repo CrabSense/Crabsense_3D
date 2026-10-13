@@ -4,6 +4,8 @@
 	"block.crabsense_ras.rack": "RAS Rearing Rack",
 	"block.crabsense_ras.crab_box": "RAS Crab Box",
 	"block.crabsense_ras.drum_filter": "RAS Drum Filter",
+	"block.crabsense_ras.blue_water_drum": "Blue Water Drum",
+	"block.crabsense_ras.blue_water_drum_side_outlet": "Blue Water Drum - Side Outlet",
 	"item.crabsense_ras.tank": "RAS Culture Tank",
 	"item.crabsense_ras.pump": "RAS Circulation Pump",
 	"item.crabsense_ras.rack": "RAS Rearing Rack",
