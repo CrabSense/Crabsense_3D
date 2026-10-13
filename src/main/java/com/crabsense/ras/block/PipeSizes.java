@@ -13,8 +13,8 @@ public final class PipeSizes {
 	}
 
 	static final double BOX_BOTTOM_X = 14.0;
-	static final double BOX_BOTTOM_Z = 7.3;
-	static final double BOX_SURFACE_X = 7.6;
+	static final double BOX_BOTTOM_Z = 8.0;
+	static final double BOX_SURFACE_X = 8.0;
 	static final double BOX_SURFACE_Z = 13.15;
 
 	public static PipeSize fromNeighbors(LevelReader level, BlockPos place, Vec3 click) {
