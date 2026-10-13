@@ -12,6 +12,18 @@ public final class PipeSizes {
 	private PipeSizes() {
 	}
 
+	/** Size of the block this fitting is being clicked onto; otherwise a neighbour run. */
+	public static PipeSize fromAttach(LevelReader level, BlockPos place, Direction toward, Vec3 click) {
+		if (toward != null) {
+			BlockPos npos = place.relative(toward);
+			PipeSize size = of(level.getBlockState(npos), npos, click, toward.getOpposite());
+			if (size != null) {
+				return size;
+			}
+		}
+		return fromNeighbors(level, place, click);
+	}
+
 	public static PipeSize fromNeighbors(LevelReader level, BlockPos place, Vec3 click) {
 		PipeSize found = null;
 		for (Direction dir : Direction.values()) {

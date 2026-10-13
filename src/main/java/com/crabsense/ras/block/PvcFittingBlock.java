@@ -114,10 +114,7 @@ public class PvcFittingBlock extends Block {
 				return here;
 			}
 		}
-		PipeSize dn = PipeSizes.fromNeighbors(context.getLevel(), pos, context.getClickLocation());
-		if (mount == PipeMount.DRUM || mount == PipeMount.DRUM_HIGH || mount == PipeMount.DRUM_BOTH) {
-			dn = PipeSize.DN60;
-		}
+		PipeSize dn = PipeSizes.fromAttach(context.getLevel(), pos, toward, context.getClickLocation());
 		BlockState placed = defaultBlockState()
 			.setValue(MOUNT, mount)
 			.setValue(FACING, facing)
@@ -125,18 +122,21 @@ public class PvcFittingBlock extends Block {
 			.setValue(DN, dn);
 		if (toward != null) {
 			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
-			if (n.getBlock() instanceof PvcFittingBlock && n.getValue(MOUNT) == PipeMount.DRUM_BOTH) {
-				placed = placed
-					.setValue(MOUNT, PipeMount.DRUM_BOTH)
-					.setValue(FACING, n.getValue(FACING))
-					.setValue(BEND, n.getValue(BEND))
-					.setValue(HIGH_FACING, n.getValue(HIGH_FACING))
-					.setValue(HIGH_BEND, n.getValue(HIGH_BEND));
-			} else if (n.getBlock() instanceof PvcFittingBlock && n.getValue(MOUNT) == PipeMount.DRUM_HIGH) {
-				placed = placed
-					.setValue(MOUNT, PipeMount.DRUM_HIGH)
-					.setValue(FACING, n.getValue(FACING))
-					.setValue(BEND, n.getValue(BEND));
+			if (n.getBlock() instanceof PvcFittingBlock) {
+				placed = placed.setValue(DN, n.getValue(DN));
+				if (n.getValue(MOUNT) == PipeMount.DRUM_BOTH) {
+					placed = placed
+						.setValue(MOUNT, PipeMount.DRUM_BOTH)
+						.setValue(FACING, n.getValue(FACING))
+						.setValue(BEND, n.getValue(BEND))
+						.setValue(HIGH_FACING, n.getValue(HIGH_FACING))
+						.setValue(HIGH_BEND, n.getValue(HIGH_BEND));
+				} else if (n.getValue(MOUNT) == PipeMount.DRUM_HIGH) {
+					placed = placed
+						.setValue(MOUNT, PipeMount.DRUM_HIGH)
+						.setValue(FACING, n.getValue(FACING))
+						.setValue(BEND, n.getValue(BEND));
+				}
 			}
 		}
 		return placed;
