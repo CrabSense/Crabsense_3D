@@ -1,7 +1,8 @@
 {
   "variants": {
-    "": {
-      "model": "crabsense_ras:block/blue_water_drum"
-    }
+    "facing=north": { "model": "crabsense_ras:block/blue_water_drum" },
+    "facing=east": { "model": "crabsense_ras:block/blue_water_drum", "y": 90 },
+    "facing=south": { "model": "crabsense_ras:block/blue_water_drum", "y": 180 },
+    "facing=west": { "model": "crabsense_ras:block/blue_water_drum", "y": 270 }
   }
 }

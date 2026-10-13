@@ -39,9 +39,11 @@ public final class RasBlocks {
 		BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).noOcclusion().lightLevel(state -> 15),
 		DrumFilterBlock::new);
 	public static final Block BLUE_WATER_DRUM = register("blue_water_drum",
-		BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(1.0F).sound(SoundType.GLASS).noOcclusion());
+		BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(1.0F).sound(SoundType.GLASS).noOcclusion(),
+		WaterDrumBlock::new);
 	public static final Block BLUE_WATER_DRUM_SIDE_OUTLET = register("blue_water_drum_side_outlet",
-		BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(1.0F).sound(SoundType.GLASS).noOcclusion());
+		BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(1.0F).sound(SoundType.GLASS).noOcclusion(),
+		WaterDrumBlock::new);
 	private static BlockBehaviour.Properties pvcProps() {
 		return BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(0.8F).sound(SoundType.STONE).noOcclusion();
 	}
