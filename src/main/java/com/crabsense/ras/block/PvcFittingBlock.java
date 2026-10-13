@@ -107,9 +107,6 @@ public class PvcFittingBlock extends Block {
 	@Override
 	protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
 			Player player, InteractionHand hand, BlockHitResult hit) {
-		if (stack.is(this.asItem())) {
-			return useWithoutItem(state, level, pos, player, hit);
-		}
 		return InteractionResult.PASS;
 	}
 

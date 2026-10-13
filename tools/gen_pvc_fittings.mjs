@@ -36,55 +36,55 @@ function hub(dn, extra) {
 function freeTee(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(8 - h), 1], [round(8 + h), round(8 + h), 15]),
-		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [15, round(8 + h), round(8 + h)]),
+		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
+		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeUp(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(8 - h), 1], [round(8 + h), round(8 + h), 15]),
-		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 15, round(8 + h)]),
+		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
+		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeDown(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("run", [round(8 - h), round(8 - h), 1], [round(8 + h), round(8 + h), 15]),
-		cube("branch", [round(8 - h), 1, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
+		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
+		cube("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeElbow(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 15]),
-		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [15, round(8 + h), round(8 + h)]),
+		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
+		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		hub(dn, 0.3),
 	];
 }
 function freeElbowUp(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 15]),
-		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 15, round(8 + h)]),
+		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
+		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		hub(dn, 0.3),
 	];
 }
 function freeElbowDown(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 15]),
-		cube("out", [round(8 - h), 1, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
+		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
+		cube("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
 		hub(dn, 0.3),
 	];
 }
 function freeCap(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("socket", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 15]),
+		cube("socket", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
 		cube("plug", [round(8 - h - 0.35), round(8 - h - 0.35), 7.2], [round(8 + h + 0.35), round(8 + h + 0.35), 8.4]),
 	];
 }
@@ -95,24 +95,24 @@ function freePipe(dn) {
 function freeTeeStem(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 15]),
-		cube("bar", [1, round(8 - h), round(8 - h)], [15, round(8 + h), round(8 + h)]),
+		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
+		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeStemUp(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 15]),
-		cube("bar", [round(8 - h), 8, round(8 - h)], [round(8 + h), 15, round(8 + h)]),
+		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
+		cube("bar", [round(8 - h), 8, round(8 - h)], [round(8 + h), 16, round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
 function freeTeeStemDown(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [
-		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 15]),
-		cube("bar", [round(8 - h), 1, round(8 - h)], [round(8 + h), 8, round(8 + h)]),
+		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
+		cube("bar", [round(8 - h), 0, round(8 - h)], [round(8 + h), 8, round(8 + h)]),
 		hub(dn, 0.25),
 	];
 }
