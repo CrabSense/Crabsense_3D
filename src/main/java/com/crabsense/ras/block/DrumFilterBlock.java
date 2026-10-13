@@ -57,15 +57,23 @@ public class DrumFilterBlock extends Block implements EntityBlock {
 			return InteractionResult.PASS;
 		}
 		if (!level.isClientSide()) {
-			BlockState updated = pipe.setValue(PvcFittingBlock.MOUNT, next);
+			PvcFittingBlock held = (PvcFittingBlock) item.getBlock();
+			BlockState updated;
 			if (cur == PipeMount.DRUM) {
-				updated = updated
+				updated = pipe.setValue(PvcFittingBlock.MOUNT, PipeMount.DRUM_BOTH)
+					.setValue(PvcFittingBlock.HIGH_FACING, Direction.SOUTH)
+					.setValue(PvcFittingBlock.HIGH_BEND, PipeBend.LEFT)
+					.setValue(PvcFittingBlock.HIGH_KIND, held.kind());
+			} else {
+				PvcFittingBlock existed = (PvcFittingBlock) pipe.getBlock();
+				updated = held.defaultBlockState()
+					.setValue(PvcFittingBlock.MOUNT, PipeMount.DRUM_BOTH)
+					.setValue(PvcFittingBlock.DN, pipe.getValue(PvcFittingBlock.DN))
+					.setValue(PvcFittingBlock.FACING, Direction.SOUTH)
+					.setValue(PvcFittingBlock.BEND, PipeBend.LEFT)
 					.setValue(PvcFittingBlock.HIGH_FACING, pipe.getValue(PvcFittingBlock.FACING))
-					.setValue(PvcFittingBlock.HIGH_BEND, pipe.getValue(PvcFittingBlock.BEND));
-			} else if (cur == PipeMount.DRUM_HIGH) {
-				updated = updated
-					.setValue(PvcFittingBlock.HIGH_FACING, pipe.getValue(PvcFittingBlock.FACING))
-					.setValue(PvcFittingBlock.HIGH_BEND, pipe.getValue(PvcFittingBlock.BEND));
+					.setValue(PvcFittingBlock.HIGH_BEND, pipe.getValue(PvcFittingBlock.BEND))
+					.setValue(PvcFittingBlock.HIGH_KIND, existed.kind());
 			}
 			level.setBlock(pos.relative(face), updated, 3);
 		}

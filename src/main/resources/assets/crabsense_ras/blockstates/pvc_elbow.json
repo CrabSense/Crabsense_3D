@@ -58,10 +58,53 @@
 				"high_facing": "north",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 180
 			}
 		},
@@ -123,10 +166,53 @@
 				"high_facing": "north",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 180
 			}
 		},
@@ -188,10 +274,53 @@
 				"high_facing": "north",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 0
 			}
 		},
@@ -253,10 +382,53 @@
 				"high_facing": "north",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 0
 			}
 		},
@@ -318,10 +490,53 @@
 				"high_facing": "north",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 180
 			}
 		},
@@ -383,10 +598,53 @@
 				"high_facing": "north",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 180
 			}
 		},
@@ -448,10 +706,53 @@
 				"high_facing": "north",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 180
 			}
 		},
@@ -513,10 +814,53 @@
 				"high_facing": "north",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 180
 			}
 		},
@@ -578,10 +922,53 @@
 				"high_facing": "south",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 0
 			}
 		},
@@ -643,10 +1030,53 @@
 				"high_facing": "south",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 0
 			}
 		},
@@ -708,10 +1138,53 @@
 				"high_facing": "south",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 180
 			}
 		},
@@ -773,10 +1246,53 @@
 				"high_facing": "south",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 180
 			}
 		},
@@ -838,10 +1354,53 @@
 				"high_facing": "south",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 0
 			}
 		},
@@ -903,7 +1462,22 @@
 				"high_facing": "south",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
@@ -913,6 +1487,34 @@
 		{
 			"when": {
 				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
 				"facing": "south",
 				"bend": "down",
 				"port": "sides",
@@ -968,10 +1570,53 @@
 				"high_facing": "south",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 0
 			}
 		},
@@ -1033,10 +1678,53 @@
 				"high_facing": "south",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 0
 			}
 		},
@@ -1098,10 +1786,53 @@
 				"high_facing": "east",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 270
 			}
 		},
@@ -1163,10 +1894,53 @@
 				"high_facing": "east",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 270
 			}
 		},
@@ -1228,10 +2002,53 @@
 				"high_facing": "east",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 90
 			}
 		},
@@ -1293,10 +2110,53 @@
 				"high_facing": "east",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 90
 			}
 		},
@@ -1358,10 +2218,53 @@
 				"high_facing": "east",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 270
 			}
 		},
@@ -1423,7 +2326,22 @@
 				"high_facing": "east",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
@@ -1433,6 +2351,34 @@
 		{
 			"when": {
 				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
 				"facing": "east",
 				"bend": "down",
 				"port": "sides",
@@ -1488,10 +2434,53 @@
 				"high_facing": "east",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 270
 			}
 		},
@@ -1553,10 +2542,53 @@
 				"high_facing": "east",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 270
 			}
 		},
@@ -1618,10 +2650,53 @@
 				"high_facing": "west",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 90
 			}
 		},
@@ -1683,10 +2758,53 @@
 				"high_facing": "west",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 90
 			}
 		},
@@ -1748,10 +2866,53 @@
 				"high_facing": "west",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 270
 			}
 		},
@@ -1813,10 +2974,53 @@
 				"high_facing": "west",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_drum_high",
 				"y": 270
 			}
 		},
@@ -1878,10 +3082,53 @@
 				"high_facing": "west",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 90
 			}
 		},
@@ -1943,7 +3190,22 @@
 				"high_facing": "west",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_up",
@@ -1953,6 +3215,34 @@
 		{
 			"when": {
 				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
 				"facing": "west",
 				"bend": "down",
 				"port": "sides",
@@ -2008,10 +3298,53 @@
 				"high_facing": "west",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 90
 			}
 		},
@@ -2073,10 +3406,53 @@
 				"high_facing": "west",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn27_drum_high_stem_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn27_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn27_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "27",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn27_up",
 				"y": 90
 			}
 		},
@@ -2906,10 +4282,53 @@
 				"high_facing": "north",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 180
 			}
 		},
@@ -2971,10 +4390,53 @@
 				"high_facing": "north",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 180
 			}
 		},
@@ -3036,10 +4498,53 @@
 				"high_facing": "north",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 0
 			}
 		},
@@ -3101,10 +4606,53 @@
 				"high_facing": "north",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 0
 			}
 		},
@@ -3166,10 +4714,53 @@
 				"high_facing": "north",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 180
 			}
 		},
@@ -3231,10 +4822,53 @@
 				"high_facing": "north",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 180
 			}
 		},
@@ -3296,10 +4930,53 @@
 				"high_facing": "north",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 180
 			}
 		},
@@ -3361,10 +5038,53 @@
 				"high_facing": "north",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 180
 			}
 		},
@@ -3426,10 +5146,53 @@
 				"high_facing": "south",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 0
 			}
 		},
@@ -3491,10 +5254,53 @@
 				"high_facing": "south",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 0
 			}
 		},
@@ -3556,10 +5362,53 @@
 				"high_facing": "south",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 180
 			}
 		},
@@ -3621,10 +5470,53 @@
 				"high_facing": "south",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 180
 			}
 		},
@@ -3686,10 +5578,53 @@
 				"high_facing": "south",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 0
 			}
 		},
@@ -3751,7 +5686,22 @@
 				"high_facing": "south",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
@@ -3761,6 +5711,34 @@
 		{
 			"when": {
 				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
 				"facing": "south",
 				"bend": "down",
 				"port": "sides",
@@ -3816,10 +5794,53 @@
 				"high_facing": "south",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 0
 			}
 		},
@@ -3881,10 +5902,53 @@
 				"high_facing": "south",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 0
 			}
 		},
@@ -3946,10 +6010,53 @@
 				"high_facing": "east",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 270
 			}
 		},
@@ -4011,10 +6118,53 @@
 				"high_facing": "east",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 270
 			}
 		},
@@ -4076,10 +6226,53 @@
 				"high_facing": "east",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 90
 			}
 		},
@@ -4141,10 +6334,53 @@
 				"high_facing": "east",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 90
 			}
 		},
@@ -4206,10 +6442,53 @@
 				"high_facing": "east",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 270
 			}
 		},
@@ -4271,7 +6550,22 @@
 				"high_facing": "east",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
@@ -4281,6 +6575,34 @@
 		{
 			"when": {
 				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
 				"facing": "east",
 				"bend": "down",
 				"port": "sides",
@@ -4336,10 +6658,53 @@
 				"high_facing": "east",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 270
 			}
 		},
@@ -4401,10 +6766,53 @@
 				"high_facing": "east",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 270
 			}
 		},
@@ -4466,10 +6874,53 @@
 				"high_facing": "west",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 90
 			}
 		},
@@ -4531,10 +6982,53 @@
 				"high_facing": "west",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 90
 			}
 		},
@@ -4596,10 +7090,53 @@
 				"high_facing": "west",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 270
 			}
 		},
@@ -4661,10 +7198,53 @@
 				"high_facing": "west",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_drum_high",
 				"y": 270
 			}
 		},
@@ -4726,10 +7306,53 @@
 				"high_facing": "west",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 90
 			}
 		},
@@ -4791,7 +7414,22 @@
 				"high_facing": "west",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_up",
@@ -4801,6 +7439,34 @@
 		{
 			"when": {
 				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
 				"facing": "west",
 				"bend": "down",
 				"port": "sides",
@@ -4856,10 +7522,53 @@
 				"high_facing": "west",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 90
 			}
 		},
@@ -4921,10 +7630,53 @@
 				"high_facing": "west",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn34_drum_high_stem_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn34_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn34_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "34",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn34_up",
 				"y": 90
 			}
 		},
@@ -5754,10 +8506,53 @@
 				"high_facing": "north",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 180
 			}
 		},
@@ -5845,10 +8640,53 @@
 				"high_facing": "north",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 180
 			}
 		},
@@ -5936,10 +8774,53 @@
 				"high_facing": "north",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 0
 			}
 		},
@@ -6027,10 +8908,53 @@
 				"high_facing": "north",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 0
 			}
 		},
@@ -6118,10 +9042,53 @@
 				"high_facing": "north",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 180
 			}
 		},
@@ -6209,10 +9176,53 @@
 				"high_facing": "north",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 180
 			}
 		},
@@ -6300,10 +9310,53 @@
 				"high_facing": "north",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 180
 			}
 		},
@@ -6391,10 +9444,53 @@
 				"high_facing": "north",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "north",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 180
 			}
 		},
@@ -6482,10 +9578,53 @@
 				"high_facing": "south",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 0
 			}
 		},
@@ -6573,10 +9712,53 @@
 				"high_facing": "south",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 0
 			}
 		},
@@ -6664,10 +9846,53 @@
 				"high_facing": "south",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 180
 			}
 		},
@@ -6755,7 +9980,22 @@
 				"high_facing": "south",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
@@ -6765,6 +10005,34 @@
 		{
 			"when": {
 				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
+				"y": 180
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
 				"facing": "south",
 				"bend": "right",
 				"port": "stem",
@@ -6846,10 +10114,53 @@
 				"high_facing": "south",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 0
 			}
 		},
@@ -6937,10 +10248,53 @@
 				"high_facing": "south",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 0
 			}
 		},
@@ -7028,10 +10382,53 @@
 				"high_facing": "south",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 0
 			}
 		},
@@ -7119,10 +10516,53 @@
 				"high_facing": "south",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 0
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "south",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 0
 			}
 		},
@@ -7210,10 +10650,53 @@
 				"high_facing": "east",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 270
 			}
 		},
@@ -7301,10 +10784,53 @@
 				"high_facing": "east",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 270
 			}
 		},
@@ -7392,10 +10918,53 @@
 				"high_facing": "east",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 90
 			}
 		},
@@ -7483,7 +11052,22 @@
 				"high_facing": "east",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
@@ -7493,6 +11077,34 @@
 		{
 			"when": {
 				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
 				"facing": "east",
 				"bend": "right",
 				"port": "stem",
@@ -7574,10 +11186,53 @@
 				"high_facing": "east",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 270
 			}
 		},
@@ -7665,10 +11320,53 @@
 				"high_facing": "east",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 270
 			}
 		},
@@ -7756,10 +11454,53 @@
 				"high_facing": "east",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 270
 			}
 		},
@@ -7847,10 +11588,53 @@
 				"high_facing": "east",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "east",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 270
 			}
 		},
@@ -7938,10 +11722,53 @@
 				"high_facing": "west",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 90
 			}
 		},
@@ -8029,10 +11856,53 @@
 				"high_facing": "west",
 				"high_bend": "left",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "left",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 90
 			}
 		},
@@ -8120,10 +11990,53 @@
 				"high_facing": "west",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
 				"y": 270
 			}
 		},
@@ -8211,7 +12124,22 @@
 				"high_facing": "west",
 				"high_bend": "right",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high",
@@ -8221,6 +12149,34 @@
 		{
 			"when": {
 				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "right",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_drum_high",
+				"y": 270
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
 				"facing": "west",
 				"bend": "right",
 				"port": "stem",
@@ -8302,10 +12258,53 @@
 				"high_facing": "west",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 90
 			}
 		},
@@ -8393,10 +12392,53 @@
 				"high_facing": "west",
 				"high_bend": "up",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_up",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "up",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 90
 			}
 		},
@@ -8484,10 +12526,53 @@
 				"high_facing": "west",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "sides"
+				"port": "sides",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "sides",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 90
 			}
 		},
@@ -8575,10 +12660,53 @@
 				"high_facing": "west",
 				"high_bend": "down",
 				"mount": "drum_both",
-				"port": "stem"
+				"port": "stem",
+				"high_kind": "tee"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_tee_dn60_drum_high_stem_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "elbow"
 			},
 			"apply": {
 				"model": "crabsense_ras:block/pvc_elbow_dn60_drum_high_down",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "cap"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_cap_dn60_drum_high",
+				"y": 90
+			}
+		},
+		{
+			"when": {
+				"dn": "60",
+				"high_facing": "west",
+				"high_bend": "down",
+				"mount": "drum_both",
+				"port": "stem",
+				"high_kind": "pipe"
+			},
+			"apply": {
+				"model": "crabsense_ras:block/pvc_pipe_dn60_up",
 				"y": 90
 			}
 		},

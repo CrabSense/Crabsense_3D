@@ -355,15 +355,15 @@ for (const kind of kinds) {
 		};
 		const drumLow = writeLane("", lowLane);
 		const drumHigh = writeLane("_high", highLane);
-		const drumModel = (base, bend, port) => {
-			if (kind === "tee" && port === "stem") {
+		const drumModel = (k, base, bend, port) => {
+			if (k === "tee" && port === "stem") {
 				if (bend === "up" || bend === "down") return `crabsense_ras:block/${base}_stem_${bend}`;
 				return `crabsense_ras:block/${base}_stem`;
 			}
-			if (kind === "pipe" && (bend === "up" || bend === "down")) {
+			if (k === "pipe" && (bend === "up" || bend === "down")) {
 				return `crabsense_ras:block/pvc_pipe_dn${dn}_up`;
 			}
-			if ((kind === "tee" || kind === "elbow") && (bend === "up" || bend === "down")) {
+			if ((k === "tee" || k === "elbow") && (bend === "up" || bend === "down")) {
 				return `crabsense_ras:block/${base}_${bend}`;
 			}
 			return `crabsense_ras:block/${base}`;
@@ -376,13 +376,15 @@ for (const kind of kinds) {
 					const yaw = yFor(facing, bend);
 					const when = { dn: String(dn), facing, bend, port };
 					part({ ...when, mount: "air" }, spec);
-					part({ ...when, mount: "drum" }, { model: drumModel(drumLow, bend, port), y: yaw });
-					part({ ...when, mount: "drum_high" }, { model: drumModel(drumHigh, bend, port), y: yaw });
-					part({ ...when, mount: "drum_both" }, { model: drumModel(drumLow, bend, port), y: yaw });
-					part(
-						{ dn: String(dn), high_facing: facing, high_bend: bend, mount: "drum_both", port },
-						{ model: drumModel(drumHigh, bend, port), y: yaw },
-					);
+					part({ ...when, mount: "drum" }, { model: drumModel(kind, drumLow, bend, port), y: yaw });
+					part({ ...when, mount: "drum_high" }, { model: drumModel(kind, drumHigh, bend, port), y: yaw });
+					part({ ...when, mount: "drum_both" }, { model: drumModel(kind, drumLow, bend, port), y: yaw });
+					for (const hk of kinds) {
+						part(
+							{ dn: String(dn), high_facing: facing, high_bend: bend, mount: "drum_both", port, high_kind: hk },
+							{ model: drumModel(hk, `pvc_${hk}_dn${dn}_drum_high`, bend, port), y: yaw },
+						);
+					}
 					if (dn === 60) {
 						part({ ...when, mount: "box" }, spec);
 						part({ ...when, mount: "line" }, spec);
@@ -423,7 +425,7 @@ if (!has((w) => w.mount === "air" && w.bend === "down" && w.dn === "34")) throw 
 if (!has((w) => w.mount === "line" && w.port === "stem")) throw new Error("missing tee stem line");
 if (!has((w) => w.mount === "drum")) throw new Error("missing drum mount");
 if (!has((w) => w.mount === "drum_high")) throw new Error("missing drum high");
-if (!has((w) => w.mount === "drum_both" && w.high_facing)) throw new Error("missing drum both high lane");
+if (!has((w) => w.mount === "drum_both" && w.high_facing && w.high_kind === "pipe")) throw new Error("missing drum both high lane");
 if (!has((w, a) => w.mount === "air" && w.bend === "right" && a.y === 180)) throw new Error("right should y+180");
 if (!has((w, a) => w.mount === "air" && w.bend === "up" && String(a.model).endsWith("_up"))) throw new Error("up model");
 if (!has((w, a) => w.mount === "air" && w.port === "stem" && String(a.model).includes("stem"))) throw new Error("stem model");

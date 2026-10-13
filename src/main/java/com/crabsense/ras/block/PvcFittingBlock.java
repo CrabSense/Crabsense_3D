@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
@@ -35,8 +36,16 @@ public class PvcFittingBlock extends Block {
 	public static final EnumProperty<Direction> HIGH_FACING =
 		EnumProperty.create("high_facing", Direction.class, Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST);
 	public static final EnumProperty<PipeBend> HIGH_BEND = EnumProperty.create("high_bend", PipeBend.class);
+	public static final EnumProperty<Kind> HIGH_KIND = EnumProperty.create("high_kind", Kind.class);
 
-	public enum Kind { TEE, ELBOW, CAP, PIPE }
+	public enum Kind implements StringRepresentable {
+		TEE, ELBOW, CAP, PIPE;
+
+		@Override
+		public String getSerializedName() {
+			return name().toLowerCase();
+		}
+	}
 
 	private final Kind kind;
 
@@ -50,7 +59,8 @@ public class PvcFittingBlock extends Block {
 			.setValue(MOUNT, PipeMount.AIR)
 			.setValue(PORT, PipePort.SIDES)
 			.setValue(HIGH_FACING, Direction.NORTH)
-			.setValue(HIGH_BEND, PipeBend.LEFT));
+			.setValue(HIGH_BEND, PipeBend.LEFT)
+			.setValue(HIGH_KIND, kind));
 	}
 
 	public Kind kind() {
@@ -59,7 +69,7 @@ public class PvcFittingBlock extends Block {
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(DN, FACING, BEND, MOUNT, PORT, HIGH_FACING, HIGH_BEND);
+		builder.add(DN, FACING, BEND, MOUNT, PORT, HIGH_FACING, HIGH_BEND, HIGH_KIND);
 	}
 
 	@Override
@@ -102,19 +112,23 @@ public class PvcFittingBlock extends Block {
 			bend = PipeBend.UP;
 		}
 		BlockState here = context.getLevel().getBlockState(pos);
-		if (here.getBlock() instanceof PvcFittingBlock) {
+		if (here.getBlock() instanceof PvcFittingBlock existing) {
 			PipeMount was = here.getValue(MOUNT);
 			if (was == PipeMount.DRUM && mount == PipeMount.DRUM_HIGH) {
 				return here.setValue(MOUNT, PipeMount.DRUM_BOTH)
 					.setValue(HIGH_FACING, facing)
-					.setValue(HIGH_BEND, bend);
+					.setValue(HIGH_BEND, bend)
+					.setValue(HIGH_KIND, kind);
 			}
 			if (was == PipeMount.DRUM_HIGH && mount == PipeMount.DRUM) {
-				return here.setValue(MOUNT, PipeMount.DRUM_BOTH)
+				return defaultBlockState()
+					.setValue(MOUNT, PipeMount.DRUM_BOTH)
+					.setValue(DN, here.getValue(DN))
+					.setValue(FACING, facing)
+					.setValue(BEND, bend)
 					.setValue(HIGH_FACING, here.getValue(FACING))
 					.setValue(HIGH_BEND, here.getValue(BEND))
-					.setValue(FACING, facing)
-					.setValue(BEND, bend);
+					.setValue(HIGH_KIND, existing.kind());
 			}
 			if (was == PipeMount.DRUM_BOTH) {
 				return here;
