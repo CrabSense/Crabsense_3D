@@ -40,6 +40,9 @@ public final class PipeSizes {
 		if (block == RasBlocks.DRUM_FILTER) {
 			return PipeSize.DN60;
 		}
+		if (block == RasBlocks.BLUE_WATER_DRUM_SIDE_OUTLET) {
+			return PipeSize.DN34;
+		}
 		if (block == RasBlocks.CRAB_BOX) {
 			return crabBoxDrain(pos, click, onFace);
 		}

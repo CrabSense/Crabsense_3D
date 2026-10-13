@@ -149,6 +149,14 @@ public class PvcFittingBlock extends Block {
 		if (fit != null) {
 			return fit;
 		}
+		if (isOutletToward(level.getBlockState(pos.relative(prefer)), prefer)) {
+			return prefer;
+		}
+		for (Direction dir : Direction.Plane.HORIZONTAL) {
+			if (isOutletToward(level.getBlockState(pos.relative(dir)), dir)) {
+				return dir;
+			}
+		}
 		if (isDrum(level.getBlockState(pos.relative(prefer)))) {
 			return prefer;
 		}
@@ -160,7 +168,7 @@ public class PvcFittingBlock extends Block {
 			return PipeMount.AIR;
 		}
 		BlockState n = level.getBlockState(pos.relative(toward));
-		if (isBox(n)) {
+		if (isBox(n) || isOutletDrum(n)) {
 			return PipeMount.BOX;
 		}
 		if (isFitting(n)) {
@@ -188,8 +196,16 @@ public class PvcFittingBlock extends Block {
 	}
 
 	static boolean isDrum(BlockState state) {
-		return state.getBlock() == RasBlocks.DRUM_FILTER
-			|| state.getBlock() == RasBlocks.BLUE_WATER_DRUM_SIDE_OUTLET;
+		return state.getBlock() == RasBlocks.DRUM_FILTER || isOutletDrum(state);
+	}
+
+	static boolean isOutletDrum(BlockState state) {
+		return state.getBlock() == RasBlocks.BLUE_WATER_DRUM_SIDE_OUTLET;
+	}
+
+	/** Fitting is on the PVC port side of the water drum. */
+	static boolean isOutletToward(BlockState drum, Direction fromFittingToDrum) {
+		return isOutletDrum(drum) && drum.getValue(WaterDrumBlock.FACING) == fromFittingToDrum.getOpposite();
 	}
 
 	@Override
