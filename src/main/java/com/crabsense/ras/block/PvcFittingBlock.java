@@ -77,6 +77,12 @@ public class PvcFittingBlock extends Block {
 		if (prefer.getAxis().isVertical()) {
 			bend = prefer == Direction.DOWN ? PipeBend.DOWN : PipeBend.UP;
 		}
+		if (isFitting(context.getLevel().getBlockState(pos.below()))
+			|| isOutletDrum(context.getLevel().getBlockState(pos.below()))) {
+			bend = kind == Kind.PIPE ? PipeBend.UP : PipeBend.DOWN;
+		} else if (isFitting(context.getLevel().getBlockState(pos.above()))) {
+			bend = PipeBend.UP;
+		}
 		return defaultBlockState()
 			.setValue(MOUNT, mount)
 			.setValue(FACING, facing)

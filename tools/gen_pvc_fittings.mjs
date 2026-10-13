@@ -120,6 +120,65 @@ function freePipeUp(dn) {
 	const h = Math.max(0.55, od(dn) / 2);
 	return [cube("run", [round(8 - h), 0, round(8 - h)], [round(8 + h), 16, round(8 + h)])];
 }
+const DRUM_Y = 3.2;
+function drumHub(dn) {
+	const h = Math.max(0.55, od(dn) / 2) + 0.25;
+	return cube("hub", [round(8 - h), round(DRUM_Y - h), round(8 - h)], [round(8 + h), round(DRUM_Y + h), round(8 + h)]);
+}
+function freeElbowUpDrum(dn) {
+	const h = Math.max(0.55, od(dn) / 2);
+	const y = DRUM_Y;
+	return [
+		cube("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
+		cube("out", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		drumHub(dn),
+	];
+}
+function freeElbowDownDrum(dn) {
+	const h = Math.max(0.55, od(dn) / 2);
+	const y = DRUM_Y;
+	return [
+		cube("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
+		cube("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
+		drumHub(dn),
+	];
+}
+function freeTeeUpDrum(dn) {
+	const h = Math.max(0.55, od(dn) / 2);
+	const y = DRUM_Y;
+	return [
+		cube("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
+		cube("branch", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		drumHub(dn),
+	];
+}
+function freeTeeDownDrum(dn) {
+	const h = Math.max(0.55, od(dn) / 2);
+	const y = DRUM_Y;
+	return [
+		cube("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
+		cube("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
+		drumHub(dn),
+	];
+}
+function freeTeeStemUpDrum(dn) {
+	const h = Math.max(0.55, od(dn) / 2);
+	const y = DRUM_Y;
+	return [
+		cube("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
+		cube("stem", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
+		drumHub(dn),
+	];
+}
+function freeTeeStemDownDrum(dn) {
+	const h = Math.max(0.55, od(dn) / 2);
+	const y = DRUM_Y;
+	return [
+		cube("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
+		cube("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
+		drumHub(dn),
+	];
+}
 
 function lowParts(kind, dn, facing, bend, mount, port = "sides") {
 	const ns = facing === "north" || facing === "south";
@@ -229,15 +288,15 @@ for (const kind of kinds) {
 		const drumBase = `pvc_${kind}_dn${dn}_drum`;
 		write(drumBase, shiftY(maker(dn)));
 		if (kind === "tee") {
-			write(`${drumBase}_up`, shiftY(freeTeeUp(dn)));
-			write(`${drumBase}_down`, shiftY(freeTeeDown(dn)));
+			write(`${drumBase}_up`, freeTeeUpDrum(dn));
+			write(`${drumBase}_down`, freeTeeDownDrum(dn));
 			write(`${drumBase}_stem`, shiftY(freeTeeStem(dn)));
-			write(`${drumBase}_stem_up`, shiftY(freeTeeStemUp(dn)));
-			write(`${drumBase}_stem_down`, shiftY(freeTeeStemDown(dn)));
+			write(`${drumBase}_stem_up`, freeTeeStemUpDrum(dn));
+			write(`${drumBase}_stem_down`, freeTeeStemDownDrum(dn));
 		}
 		if (kind === "elbow") {
-			write(`${drumBase}_up`, shiftY(freeElbowUp(dn)));
-			write(`${drumBase}_down`, shiftY(freeElbowDown(dn)));
+			write(`${drumBase}_up`, freeElbowUpDrum(dn));
+			write(`${drumBase}_down`, freeElbowDownDrum(dn));
 		}
 		const drumModel = (bend, port) => {
 			if (kind === "tee" && port === "stem") {
