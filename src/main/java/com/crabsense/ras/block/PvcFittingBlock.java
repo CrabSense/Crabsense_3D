@@ -186,6 +186,9 @@ public class PvcFittingBlock extends Block {
 		if (isOutletDrum(n)) {
 			return PipeMount.DRUM;
 		}
+		if (n.getBlock() == RasBlocks.DRUM_FILTER) {
+			return PipeMount.DRUM;
+		}
 		if (isFitting(n)) {
 			return switch (n.getValue(MOUNT)) {
 				case AIR -> PipeMount.AIR;
