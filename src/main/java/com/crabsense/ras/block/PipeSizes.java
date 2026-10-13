@@ -12,11 +12,6 @@ public final class PipeSizes {
 	private PipeSizes() {
 	}
 
-	static final double BOX_BOTTOM_X = 14.0;
-	static final double BOX_BOTTOM_Z = 7.3;
-	static final double BOX_SURFACE_X = 7.6;
-	static final double BOX_SURFACE_Z = 13.15;
-
 	public static PipeSize fromNeighbors(LevelReader level, BlockPos place, Vec3 click) {
 		PipeSize found = null;
 		for (Direction dir : Direction.values()) {
@@ -37,11 +32,10 @@ public final class PipeSizes {
 		if (block instanceof PvcFittingBlock) {
 			return state.getValue(PvcFittingBlock.DN);
 		}
-		if (block == RasBlocks.DRUM_FILTER) {
+		if (block == RasBlocks.DRUM_FILTER
+				|| block == RasBlocks.BLUE_WATER_DRUM
+				|| block == RasBlocks.BLUE_WATER_DRUM_SIDE_OUTLET) {
 			return PipeSize.DN60;
-		}
-		if (block == RasBlocks.BLUE_WATER_DRUM_SIDE_OUTLET) {
-			return PipeSize.DN34;
 		}
 		if (block == RasBlocks.CRAB_BOX) {
 			return crabBoxDrain(pos, click, onFace);
@@ -49,24 +43,9 @@ public final class PipeSizes {
 		return null;
 	}
 
-	/** Surface drain DN27 sits nearer south; bottom drain DN34 sits nearer east. */
+	/** Spray/inlet is DN27 up on the wall; both bottom drain lines are DN34. */
 	static PipeSize crabBoxDrain(BlockPos box, Vec3 click, Direction onFace) {
-		double lx = (click.x - box.getX()) * 16;
-		double lz = (click.z - box.getZ()) * 16;
-		double d34 = onFace.getAxis() == Direction.Axis.Z
-			? Math.abs(lx - BOX_BOTTOM_X)
-			: Math.abs(lz - BOX_BOTTOM_Z);
-		double d27 = onFace.getAxis() == Direction.Axis.Z
-			? Math.abs(lx - BOX_SURFACE_X)
-			: Math.abs(lz - BOX_SURFACE_Z);
-		if (onFace.getAxis() == Direction.Axis.Y) {
-			d34 = hypot(lx - BOX_BOTTOM_X, lz - BOX_BOTTOM_Z);
-			d27 = hypot(lx - BOX_SURFACE_X, lz - BOX_SURFACE_Z);
-		}
-		return d34 <= d27 ? PipeSize.DN34 : PipeSize.DN27;
-	}
-
-	private static double hypot(double x, double z) {
-		return Math.sqrt(x * x + z * z);
+		double ly = (click.y - box.getY()) * 16;
+		return ly >= 5.5 ? PipeSize.DN27 : PipeSize.DN34;
 	}
 }

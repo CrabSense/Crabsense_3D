@@ -1,7 +1,7 @@
 import fs from "fs";
 
 const dir = "src/main/resources/assets/crabsense_ras/models/block";
-const od = (dn) => (dn / 27) * 0.9;
+const od = (dn) => (dn === 60 ? 3.2 : dn === 34 ? 1.2 : 0.9);
 const round = (n) => Math.round(n * 100) / 100;
 const pvc = () => ({
 	north: { uv: [0, 0, 16, 16], texture: "#pvc" },
@@ -30,11 +30,11 @@ const write = (name, elements) => {
 };
 
 function hub(dn, extra) {
-	const h = Math.max(0.55, od(dn) / 2) + extra;
+	const h = (od(dn) / 2) + extra;
 	return cube("hub", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]);
 }
 function freeTee(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
 		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
@@ -42,7 +42,7 @@ function freeTee(dn) {
 	];
 }
 function freeTeeUp(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
 		cube("branch", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
@@ -50,7 +50,7 @@ function freeTeeUp(dn) {
 	];
 }
 function freeTeeDown(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16]),
 		cube("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
@@ -58,7 +58,7 @@ function freeTeeDown(dn) {
 	];
 }
 function freeElbow(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
 		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
@@ -66,7 +66,7 @@ function freeElbow(dn) {
 	];
 }
 function freeElbowUp(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
 		cube("out", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
@@ -74,7 +74,7 @@ function freeElbowUp(dn) {
 	];
 }
 function freeElbowDown(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("in", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), round(8 + h), 16]),
 		cube("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
@@ -82,18 +82,18 @@ function freeElbowDown(dn) {
 	];
 }
 function freeCap(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("socket", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
 		cube("plug", [round(8 - h - 0.35), round(8 - h - 0.35), 7.2], [round(8 + h + 0.35), round(8 + h + 0.35), 8.4]),
 	];
 }
 function freePipe(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [cube("run", [round(8 - h), round(8 - h), 0], [round(8 + h), round(8 + h), 16])];
 }
 function freeTeeStem(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("stem", [round(8 - h), round(8 - h), 8], [round(8 + h), round(8 + h), 16]),
 		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
@@ -101,7 +101,7 @@ function freeTeeStem(dn) {
 	];
 }
 function freeTeeStemUp(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		cube("stem", [round(8 - h), round(8 - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
@@ -109,7 +109,7 @@ function freeTeeStemUp(dn) {
 	];
 }
 function freeTeeStemDown(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("bar", [0, round(8 - h), round(8 - h)], [16, round(8 + h), round(8 + h)]),
 		cube("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(8 + h), round(8 + h)]),
@@ -117,15 +117,15 @@ function freeTeeStemDown(dn) {
 	];
 }
 function freePipeUp(dn) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [cube("run", [round(8 - h), 0, round(8 - h)], [round(8 + h), 16, round(8 + h)])];
 }
 function drumHub(dn, y) {
-	const h = Math.max(0.55, od(dn) / 2) + 0.25;
+	const h = (od(dn) / 2) + 0.25;
 	return cube("hub", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]);
 }
 function freeElbowUpDrum(dn, y) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
 		cube("out", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
@@ -133,7 +133,7 @@ function freeElbowUpDrum(dn, y) {
 	];
 }
 function freeElbowDownDrum(dn, y) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("in", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), round(y + h), 16]),
 		cube("out", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
@@ -141,7 +141,7 @@ function freeElbowDownDrum(dn, y) {
 	];
 }
 function freeTeeUpDrum(dn, y) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
 		cube("branch", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
@@ -149,7 +149,7 @@ function freeTeeUpDrum(dn, y) {
 	];
 }
 function freeTeeDownDrum(dn, y) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("run", [round(8 - h), round(y - h), 0], [round(8 + h), round(y + h), 16]),
 		cube("branch", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),
@@ -157,7 +157,7 @@ function freeTeeDownDrum(dn, y) {
 	];
 }
 function freeTeeStemUpDrum(dn, y) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
 		cube("stem", [round(8 - h), round(y - h), round(8 - h)], [round(8 + h), 16, round(8 + h)]),
@@ -165,7 +165,7 @@ function freeTeeStemUpDrum(dn, y) {
 	];
 }
 function freeTeeStemDownDrum(dn, y) {
-	const h = Math.max(0.55, od(dn) / 2);
+	const h = (od(dn) / 2);
 	return [
 		cube("bar", [0, round(y - h), round(8 - h)], [16, round(y + h), round(8 + h)]),
 		cube("stem", [round(8 - h), 0, round(8 - h)], [round(8 + h), round(y + h), round(8 + h)]),

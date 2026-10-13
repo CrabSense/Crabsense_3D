@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -115,11 +114,15 @@ public class PvcFittingBlock extends Block {
 				return here;
 			}
 		}
+		PipeSize dn = PipeSizes.fromNeighbors(context.getLevel(), pos, context.getClickLocation());
+		if (mount == PipeMount.DRUM || mount == PipeMount.DRUM_HIGH || mount == PipeMount.DRUM_BOTH) {
+			dn = PipeSize.DN60;
+		}
 		BlockState placed = defaultBlockState()
 			.setValue(MOUNT, mount)
 			.setValue(FACING, facing)
 			.setValue(BEND, bend)
-			.setValue(DN, PipeSizes.fromNeighbors(context.getLevel(), pos, context.getClickLocation()));
+			.setValue(DN, dn);
 		if (toward != null) {
 			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
 			if (n.getBlock() instanceof PvcFittingBlock && n.getValue(MOUNT) == PipeMount.DRUM_BOTH) {
@@ -145,10 +148,6 @@ public class PvcFittingBlock extends Block {
 		Direction toward = towardPipe(level, pos, state.getValue(FACING));
 		PipeMount mount = mountAt(level, pos, toward, state.getValue(MOUNT));
 		BlockState next = state.setValue(MOUNT, mount);
-		PipeSize dn = PipeSizes.of(neighborState, neighborPos, Vec3.atCenterOf(neighborPos), direction.getOpposite());
-		if (dn != null) {
-			next = next.setValue(DN, dn);
-		}
 		return next;
 	}
 
