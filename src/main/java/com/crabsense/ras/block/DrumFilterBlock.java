@@ -57,7 +57,17 @@ public class DrumFilterBlock extends Block implements EntityBlock {
 			return InteractionResult.PASS;
 		}
 		if (!level.isClientSide()) {
-			level.setBlock(pos.relative(face), pipe.setValue(PvcFittingBlock.MOUNT, next), 3);
+			BlockState updated = pipe.setValue(PvcFittingBlock.MOUNT, next);
+			if (cur == PipeMount.DRUM) {
+				updated = updated
+					.setValue(PvcFittingBlock.HIGH_FACING, pipe.getValue(PvcFittingBlock.FACING))
+					.setValue(PvcFittingBlock.HIGH_BEND, pipe.getValue(PvcFittingBlock.BEND));
+			} else if (cur == PipeMount.DRUM_HIGH) {
+				updated = updated
+					.setValue(PvcFittingBlock.HIGH_FACING, pipe.getValue(PvcFittingBlock.FACING))
+					.setValue(PvcFittingBlock.HIGH_BEND, pipe.getValue(PvcFittingBlock.BEND));
+			}
+			level.setBlock(pos.relative(face), updated, 3);
 		}
 		return InteractionResult.SUCCESS;
 	}

@@ -248,7 +248,8 @@ const freeModel = (kind, dn, bend) => {
 };
 
 for (const kind of kinds) {
-	const variants = {};
+	const multipart = [];
+	const part = (when, apply) => multipart.push({ when, apply });
 	for (const dn of sizes) {
 		const maker = kind === "tee" ? freeTee : kind === "elbow" ? freeElbow : kind === "pipe" ? freePipe : freeCap;
 		write(`pvc_${kind}_dn${dn}`, maker(dn));
@@ -305,11 +306,6 @@ for (const kind of kinds) {
 		};
 		const drumLow = writeLane("", lowLane);
 		const drumHigh = writeLane("_high", highLane);
-		const bothLane = {};
-		for (const tag of Object.keys(lowLane)) {
-			bothLane[tag] = [...lowLane[tag], ...highLane[tag]];
-		}
-		const drumBoth = writeLane("_both", bothLane);
 		const drumModel = (base, bend, port) => {
 			if (kind === "tee" && port === "stem") {
 				if (bend === "up" || bend === "down") return `crabsense_ras:block/${base}_stem_${bend}`;
@@ -329,22 +325,18 @@ for (const kind of kinds) {
 				const stem = { model: stemFree(bend), y: yFor(facing, bend) };
 				for (const [port, spec] of [["sides", sides], ["stem", stem]]) {
 					const yaw = yFor(facing, bend);
-					variants[`dn=${dn},facing=${facing},bend=${bend},mount=air,port=${port}`] = spec;
-					variants[`dn=${dn},facing=${facing},bend=${bend},mount=drum,port=${port}`] = {
-						model: drumModel(drumLow, bend, port),
-						y: yaw,
-					};
-					variants[`dn=${dn},facing=${facing},bend=${bend},mount=drum_high,port=${port}`] = {
-						model: drumModel(drumHigh, bend, port),
-						y: yaw,
-					};
-					variants[`dn=${dn},facing=${facing},bend=${bend},mount=drum_both,port=${port}`] = {
-						model: drumModel(drumBoth, bend, port),
-						y: yaw,
-					};
+					const when = { dn: String(dn), facing, bend, port };
+					part({ ...when, mount: "air" }, spec);
+					part({ ...when, mount: "drum" }, { model: drumModel(drumLow, bend, port), y: yaw });
+					part({ ...when, mount: "drum_high" }, { model: drumModel(drumHigh, bend, port), y: yaw });
+					part({ ...when, mount: "drum_both" }, { model: drumModel(drumLow, bend, port), y: yaw });
+					part(
+						{ dn: String(dn), high_facing: facing, high_bend: bend, mount: "drum_both", port },
+						{ model: drumModel(drumHigh, bend, port), y: yaw },
+					);
 					if (dn === 60) {
-						variants[`dn=${dn},facing=${facing},bend=${bend},mount=box,port=${port}`] = spec;
-						variants[`dn=${dn},facing=${facing},bend=${bend},mount=line,port=${port}`] = spec;
+						part({ ...when, mount: "box" }, spec);
+						part({ ...when, mount: "line" }, spec);
 					}
 				}
 			}
@@ -356,9 +348,10 @@ for (const kind of kinds) {
 						for (const port of ["sides", "stem"]) {
 							const name = `pvc_${kind}_dn${dn}_${mount}_${facing}_${bend}${port === "stem" ? "_stem" : ""}`;
 							write(name, lowParts(kind, dn, facing, bend, mount, port));
-							variants[`dn=${dn},facing=${facing},bend=${bend},mount=${mount},port=${port}`] = {
-								model: `crabsense_ras:block/${name}`,
-							};
+							part(
+								{ dn: String(dn), facing, bend, mount, port },
+								{ model: `crabsense_ras:block/${name}` },
+							);
 						}
 					}
 				}
@@ -366,7 +359,7 @@ for (const kind of kinds) {
 		}
 	}
 	fs.copyFileSync(`${dir}/pvc_${kind}_dn34.json`, `${dir}/pvc_${kind}.json`);
-	fs.writeFileSync(`src/main/resources/assets/crabsense_ras/blockstates/pvc_${kind}.json`, JSON.stringify({ variants }, null, "\t") + "\n");
+	fs.writeFileSync(`src/main/resources/assets/crabsense_ras/blockstates/pvc_${kind}.json`, JSON.stringify({ multipart }, null, "\t") + "\n");
 	fs.writeFileSync(`src/main/resources/assets/crabsense_ras/models/item/pvc_${kind}.json`, JSON.stringify({ parent: `crabsense_ras:block/pvc_${kind}_dn34` }) + "\n");
 	fs.writeFileSync(
 		`src/main/resources/assets/crabsense_ras/items/pvc_${kind}.json`,
@@ -375,13 +368,14 @@ for (const kind of kinds) {
 }
 
 const tee = JSON.parse(fs.readFileSync("src/main/resources/assets/crabsense_ras/blockstates/pvc_tee.json", "utf8"));
-const keys = Object.keys(tee.variants);
-if (!keys.includes("dn=34,facing=south,bend=down,mount=air,port=sides")) throw new Error("missing tee down");
-if (!keys.includes("dn=34,facing=south,bend=left,mount=line,port=stem")) throw new Error("missing tee stem line");
-if (!keys.includes("dn=34,facing=east,bend=left,mount=drum,port=sides")) throw new Error("missing drum mount");
-if (!keys.includes("dn=60,facing=south,bend=left,mount=drum_high,port=sides")) throw new Error("missing drum high");
-if (!tee.variants["dn=60,facing=south,bend=left,mount=drum_both,port=sides"].model.includes("drum_both")) throw new Error("missing drum both");
-if (tee.variants["dn=34,facing=south,bend=right,mount=air,port=sides"].y !== 180) throw new Error("right should y+180");
-if (!tee.variants["dn=34,facing=south,bend=up,mount=air,port=sides"].model.endsWith("_up")) throw new Error("up model");
-if (!tee.variants["dn=34,facing=south,bend=left,mount=air,port=stem"].model.includes("stem")) throw new Error("stem model");
-console.log("fittings generated", keys.length, "tee variants");
+const parts = tee.multipart;
+const has = (pred) => parts.some((p) => pred(p.when || {}, p.apply));
+if (!has((w) => w.mount === "air" && w.bend === "down" && w.dn === "34")) throw new Error("missing tee down");
+if (!has((w) => w.mount === "line" && w.port === "stem")) throw new Error("missing tee stem line");
+if (!has((w) => w.mount === "drum")) throw new Error("missing drum mount");
+if (!has((w) => w.mount === "drum_high")) throw new Error("missing drum high");
+if (!has((w) => w.mount === "drum_both" && w.high_facing)) throw new Error("missing drum both high lane");
+if (!has((w, a) => w.mount === "air" && w.bend === "right" && a.y === 180)) throw new Error("right should y+180");
+if (!has((w, a) => w.mount === "air" && w.bend === "up" && String(a.model).endsWith("_up"))) throw new Error("up model");
+if (!has((w, a) => w.mount === "air" && w.port === "stem" && String(a.model).includes("stem"))) throw new Error("stem model");
+console.log("fittings generated", parts.length, "tee parts");

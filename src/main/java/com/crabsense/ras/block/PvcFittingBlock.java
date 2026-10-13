@@ -34,6 +34,9 @@ public class PvcFittingBlock extends Block {
 	public static final EnumProperty<PipeBend> BEND = EnumProperty.create("bend", PipeBend.class);
 	public static final EnumProperty<PipeMount> MOUNT = EnumProperty.create("mount", PipeMount.class);
 	public static final EnumProperty<PipePort> PORT = EnumProperty.create("port", PipePort.class);
+	public static final EnumProperty<Direction> HIGH_FACING =
+		EnumProperty.create("high_facing", Direction.class, Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST);
+	public static final EnumProperty<PipeBend> HIGH_BEND = EnumProperty.create("high_bend", PipeBend.class);
 
 	public enum Kind { TEE, ELBOW, CAP, PIPE }
 
@@ -47,7 +50,9 @@ public class PvcFittingBlock extends Block {
 			.setValue(FACING, Direction.NORTH)
 			.setValue(BEND, PipeBend.LEFT)
 			.setValue(MOUNT, PipeMount.AIR)
-			.setValue(PORT, PipePort.SIDES));
+			.setValue(PORT, PipePort.SIDES)
+			.setValue(HIGH_FACING, Direction.NORTH)
+			.setValue(HIGH_BEND, PipeBend.LEFT));
 	}
 
 	public Kind kind() {
@@ -56,7 +61,7 @@ public class PvcFittingBlock extends Block {
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(DN, FACING, BEND, MOUNT, PORT);
+		builder.add(DN, FACING, BEND, MOUNT, PORT, HIGH_FACING, HIGH_BEND);
 	}
 
 	@Override
@@ -95,18 +100,44 @@ public class PvcFittingBlock extends Block {
 		BlockState here = context.getLevel().getBlockState(pos);
 		if (here.getBlock() instanceof PvcFittingBlock) {
 			PipeMount was = here.getValue(MOUNT);
-			if (was == PipeMount.DRUM_BOTH
-					|| mount == PipeMount.DRUM_BOTH
-					|| (was == PipeMount.DRUM && mount == PipeMount.DRUM_HIGH)
-					|| (was == PipeMount.DRUM_HIGH && mount == PipeMount.DRUM)) {
-				return here.setValue(MOUNT, PipeMount.DRUM_BOTH);
+			if (was == PipeMount.DRUM && mount == PipeMount.DRUM_HIGH) {
+				return here.setValue(MOUNT, PipeMount.DRUM_BOTH)
+					.setValue(HIGH_FACING, facing)
+					.setValue(HIGH_BEND, bend);
+			}
+			if (was == PipeMount.DRUM_HIGH && mount == PipeMount.DRUM) {
+				return here.setValue(MOUNT, PipeMount.DRUM_BOTH)
+					.setValue(HIGH_FACING, here.getValue(FACING))
+					.setValue(HIGH_BEND, here.getValue(BEND))
+					.setValue(FACING, facing)
+					.setValue(BEND, bend);
+			}
+			if (was == PipeMount.DRUM_BOTH) {
+				return here;
 			}
 		}
-		return defaultBlockState()
+		BlockState placed = defaultBlockState()
 			.setValue(MOUNT, mount)
 			.setValue(FACING, facing)
 			.setValue(BEND, bend)
 			.setValue(DN, PipeSizes.fromNeighbors(context.getLevel(), pos, context.getClickLocation()));
+		if (toward != null) {
+			BlockState n = context.getLevel().getBlockState(pos.relative(toward));
+			if (n.getBlock() instanceof PvcFittingBlock && n.getValue(MOUNT) == PipeMount.DRUM_BOTH) {
+				placed = placed
+					.setValue(MOUNT, PipeMount.DRUM_BOTH)
+					.setValue(FACING, n.getValue(FACING))
+					.setValue(BEND, n.getValue(BEND))
+					.setValue(HIGH_FACING, n.getValue(HIGH_FACING))
+					.setValue(HIGH_BEND, n.getValue(HIGH_BEND));
+			} else if (n.getBlock() instanceof PvcFittingBlock && n.getValue(MOUNT) == PipeMount.DRUM_HIGH) {
+				placed = placed
+					.setValue(MOUNT, PipeMount.DRUM_HIGH)
+					.setValue(FACING, n.getValue(FACING))
+					.setValue(BEND, n.getValue(BEND));
+			}
+		}
+		return placed;
 	}
 
 	@Override
@@ -135,7 +166,7 @@ public class PvcFittingBlock extends Block {
 	@Override
 	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 		if (!level.isClientSide()) {
-			level.setBlock(pos, turn(state), 3);
+			level.setBlock(pos, turn(state, hit, pos), 3);
 		}
 		return InteractionResult.SUCCESS;
 	}
@@ -149,34 +180,40 @@ public class PvcFittingBlock extends Block {
 		return InteractionResult.PASS;
 	}
 
-	BlockState turn(BlockState state) {
+	BlockState turn(BlockState state, BlockHitResult hit, BlockPos pos) {
+		boolean high = state.getValue(MOUNT) == PipeMount.DRUM_BOTH
+			&& (hit.getLocation().y - pos.getY()) * 16.0 >= 6.0;
+		return high ? turnLane(state, HIGH_FACING, HIGH_BEND, false) : turnLane(state, FACING, BEND, true);
+	}
+
+	BlockState turnLane(BlockState state, EnumProperty<Direction> facingProp, EnumProperty<PipeBend> bendProp, boolean movePort) {
 		if (kind == Kind.CAP) {
-			return state.setValue(FACING, state.getValue(FACING).getClockWise());
+			return state.setValue(facingProp, state.getValue(facingProp).getClockWise());
 		}
 		if (kind == Kind.PIPE) {
-			if (state.getValue(BEND) == PipeBend.UP || state.getValue(BEND) == PipeBend.DOWN) {
-				return state.setValue(BEND, PipeBend.LEFT);
+			if (state.getValue(bendProp) == PipeBend.UP || state.getValue(bendProp) == PipeBend.DOWN) {
+				return state.setValue(bendProp, PipeBend.LEFT);
 			}
-			Direction next = state.getValue(FACING).getClockWise();
+			Direction next = state.getValue(facingProp).getClockWise();
 			if (next == Direction.NORTH) {
-				return state.setValue(FACING, next).setValue(BEND, PipeBend.UP);
+				return state.setValue(facingProp, next).setValue(bendProp, PipeBend.UP);
 			}
-			return state.setValue(FACING, next);
+			return state.setValue(facingProp, next);
 		}
-		PipeBend next = state.getValue(BEND).next();
-		BlockState out = state.setValue(BEND, next);
+		PipeBend next = state.getValue(bendProp).next();
+		BlockState out = state.setValue(bendProp, next);
 		if (next != PipeBend.LEFT) {
 			return out;
 		}
-		if (kind == Kind.TEE) {
+		if (kind == Kind.TEE && movePort) {
 			PipePort port = state.getValue(PORT).other();
 			out = out.setValue(PORT, port);
 			if (port == PipePort.SIDES) {
-				out = out.setValue(FACING, state.getValue(FACING).getClockWise());
+				out = out.setValue(facingProp, state.getValue(facingProp).getClockWise());
 			}
 			return out;
 		}
-		out = out.setValue(FACING, state.getValue(FACING).getClockWise());
+		out = out.setValue(facingProp, state.getValue(facingProp).getClockWise());
 		return out;
 	}
 
@@ -224,7 +261,7 @@ public class PvcFittingBlock extends Block {
 		if (isFitting(n)) {
 			return switch (n.getValue(MOUNT)) {
 				case AIR -> PipeMount.AIR;
-				case DRUM, DRUM_HIGH, DRUM_BOTH -> PipeMount.DRUM;
+				case DRUM, DRUM_HIGH, DRUM_BOTH -> n.getValue(MOUNT);
 				case BOX, LINE -> PipeMount.LINE;
 			};
 		}
