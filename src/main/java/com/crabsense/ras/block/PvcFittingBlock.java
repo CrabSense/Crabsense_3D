@@ -86,9 +86,6 @@ public class PvcFittingBlock extends Block {
 		Direction toward = towardPipe(level, pos, state.getValue(FACING));
 		PipeMount mount = mountAt(level, pos, toward);
 		BlockState next = state.setValue(MOUNT, mount);
-		if (mount != PipeMount.AIR && toward != null && toward.getAxis().isHorizontal()) {
-			next = next.setValue(FACING, toward);
-		}
 		PipeSize dn = PipeSizes.of(neighborState, neighborPos, Vec3.atCenterOf(neighborPos), direction.getOpposite());
 		if (dn != null) {
 			next = next.setValue(DN, dn);
